@@ -6,86 +6,47 @@ const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    <main>
+        <article className="flex flex-col px-4 max-w-5xl mx-auto">
+            <header>
+                <h1 className="text-4xl pt-20 font-medium tracking-tight">Autoškola Test - vše o testech z autoškoly</h1>
+                <p className="pt-5">Na stránce <a href="https://www.autoskolatest.cz">autoškolatest.cz</a> se dozvíte veškeré potřebné informace o testu teorie v autoškole.</p>
+            </header>
+            <div className="pt-10">
+                <h2 className="font-medium text-2xl">Obecně o zkoušce z předpisů o provozu na pozemních komunikacích</h2>
+                <dl className="max-w-md leading-relaxed">
+                    <dt className="font-semibold pb-2 pt-5">Z kolika otázek se test z teorie skládá?</dt>
+                    <dd>Test v autoškole se skládá z 25 otázek</dd>
+                    <dt className="font-semibold pb-2 pt-5">Kolik je možno získat bodů?</dt>
+                    <dd>Maximální počet bodů je 50</dd>
+                    <dt className="font-semibold pb-2 pt-5">Kolik bodů potřebuji pro zvládnutí testu?</dt>
+                    <dd>Minimálně musíte dosáhnout 43 bodů.</dd>
+                    <dt className="font-semibold pb-2 pt-5">Jak dlouho test trvá?</dt>
+                    <dd>Absolvovat test musíte do 30 minut.</dd>
+                    <dt className="font-semibold pb-2 pt-5">Lze čas na test prodloužit?</dt>
+                    <dd>Ano, pokud jste dysgrafik, nebo dyslektik.</dd>
+                    <dt className="font-semibold pb-2 pt-5">Liší se soubory otázek pro jednotlivé skupiny řidičského oprávnění?</dt>
+                    <dd>Ano, pokud tedy žádáte o řidičské oprávnění skupiny B doporučujeme se od začátku připravovat s materiály vztahujícími se na tuto skupinu. Může se poté stát, že například otázku ohledně hloubky dezénu si vybavíte u testu špatně. </dd>
+                </dl>
+                <h2 className="font-medium text-3xl pt-10">Na co si dát pozor při přípravě?</h2>
+                <p className="max-w-xl leading-loose text-lg pt-5">Naučit se všechny otázky může být velmi náročné. Studenti autoškoli se setkávají s potížemi nejčastěji kvůli pozdě započaté přípravě, či špatnému systému přípravy. </p>
+                <h3 className="text-xl font-medium pt-5">Pozor na slovíčkaření a komplikovaný jazyk</h3>
+                <p className="max-w-xl leading-loose text-lg pt-2">Ty nejtěžší otázky bývají často ty nejhůře formulované. Dopravní teorie a testy vychází z legislativy. Proto plno otázek připomíná spíše jazykolam, než informaci, která má usnadnit provoz po pozemních komunikacích.</p>
+                <h3 className="text-xl font-medium pt-5">Nebojte se časového limitu</h3>
+                <p className="max-w-xl leading-loose text-lg pt-2">Pokud jste si již zkoušeli test nanečisto, víte, že 30 minut je více než dostatek pro analyzování a správného označení 25 otázek. Dávejte si pozor na přebytečnou kontrolu označených odpovědí. Jak již víte ze školy, napoprvé to je většinou správně.</p>
+                <h3 className="text-xl font-medium pt-5">Začněte včas!</h3>
+                <p className="max-w-xl leading-loose text-lg pt-2">Testy z teorie jsou zvládnutelné, ale je potřeba se na ně začít připravovat s předstihem. Neočekávejte, že Vám bude stačit projít otázkové sady týden před zkouškou.</p>
+                <h2 className="font-medium text-3xl pt-10">Užitečné zdroje pro přípravu</h2>
+                <ul className="text-blue-600 list-disc px-5 pt-5">
+                    <li><a href="https://etesty2.mdcr.cz/">Testy na nečisto od ministerstva dopravy</a></li>
+                    <li><a href="https://lukasovacesta.cz/blog-lukasovacesta/ze-zivota/jak-jsem-delal-autoskolu-teorie.html">Blog o autoškole</a></li>
+                    <li><a href="https://www.bezpecnecesty.cz/cz/autoskola/testy-autoskola-on-line">Bezpečné cesty</a></li>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
-        </div>
-      </div>
+                </ul>
 
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+            </div>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+        </article>
     </main>
   )
 }

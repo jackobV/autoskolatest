@@ -1,14 +1,24 @@
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from './page.module.css'
+import Head from "next/head";
 
-const inter = Inter({ subsets: ['latin'] })
-
+export const metadata = {
+    title: 'Autoškola Test - vše o testech z autoškoly přehledně',
+    description: "Na stránce autoškolatest.cz se dozvíte veškeré potřebné informace o testu teorie v autoškole.",
+    alternates: {
+        canonical: 'https://www.autoskolatest.cz/',
+    },
+};
 export default function Home() {
   return (
+      <>
+      <Head>
+          <title>Autoškola Test - vše o testech z autoškoly přehledně</title>
+          <meta name="description" content="Na stránce autoškolatest.cz se dozvíte veškeré potřebné informace o testu teorie v autoškole." />
+
+      </Head>
     <main>
         <article className="flex flex-col px-4 max-w-5xl mx-auto">
             <header>
+                <link rel="canonical" href="https://www.autoskolatest.cz/" />
                 <h1 className="text-4xl pt-20 font-medium tracking-tight">Autoškola Test - vše o testech z autoškoly</h1>
                 <p className="pt-5">Na stránce <a href="https://www.autoskolatest.cz">autoškolatest.cz</a> se dozvíte veškeré potřebné informace o testu teorie v autoškole.</p>
             </header>
@@ -48,5 +58,7 @@ export default function Home() {
 
         </article>
     </main>
+      </>
+
   )
 }

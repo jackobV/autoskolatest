@@ -15,8 +15,11 @@ export default function Page() {
                 <article className="flex flex-col px-4 max-w-5xl mx-auto">
                     <header>
                         <link rel="canonical" href="https://www.autoskolatest.cz/" />
-                        <h1 className="text-4xl pt-20 font-medium tracking-tight">Jak zvládnout stres před testem z autoškoly?</h1>
-                        <p className="pt-5 max-w-xl leading-relaxed text-gray-600 text-lg">Testy v autoškole patří mezi jedny z nejvíce stresujících zážitků. Důvod je prostý, jejich
+                        <h1 className="text-4xl pt-14 font-medium tracking-tight">Jak zvládnout stres před testem z autoškoly?</h1>
+                        <div className="overflow-hidden">
+                            <Image className="max-w-lg pt-5" src={Picture} alt={"Stres v autoškole"} />
+                        </div>
+                        <p className="pt-5 max-w-xl font-medium text-gray-500 ">Testy v autoškole patří mezi jedny z nejvíce stresujících zážitků. Důvod je prostý, jejich
                             absolvování zabere mnoho času i peněz a případný neúspěch by tedy znamenal další výdaje a
                             komplikace. Většina lidí tedy doufá, že se jim podaří vše zvládnout hned napoprvé a tím vzniká
                             velká nervozita z toho, jestli se tento plán povede. Nervy jsou něco, čím čas od času trpíme všichni,
@@ -24,9 +27,6 @@ export default function Page() {
                             tipů, jak zajistit, aby vaše nervy na testy v autoškole nezničily vaše šance na jejich absolvování.</p>
                     </header>
                     <div>
-                        <div className="overflow-hidden">
-                            <Image className="max-w-lg pt-14" src={Picture} alt={"Stres v autoškole"} />
-                        </div>
                         <div>
                             <h2 className="pt-20 text-4xl ">Zvolte správné občerstvení</h2>
                             <p className="max-w-xl leading-relaxed font-medium text-gray-700 pt-5 text-lg">Než vaše zkoušky začnou, je důležité se vhodným způsobem občerstvit. Před zkouškami si tedy

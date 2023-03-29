@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 182.51 47.74">
+    <defs>
+        <style>
+            .cls-1, .cls-2, .cls-3 {
+            fill: none;
+            }
+
+            .cls-4 {
+            letter-spacing: -.02em;
+            }
+
+            .cls-4, .cls-5, .cls-6, .cls-7, .cls-8, .cls-9, .cls-10 {
+            isolation: isolate;
+            }
+
+            .cls-4, .cls-5, .cls-6, .cls-7, .cls-9, .cls-10 {
+            fill: #231f20;
+            font-family: Futura-Medium, Futura;
+            font-size: 18.41px;
+            font-weight: 500;
+            }
+
+            .cls-2 {
+            stroke: #efa029;
+            }
+
+            .cls-2, .cls-3 {
+            stroke-miterlimit: 10;
+            stroke-width: 3px;
+            }
+
+            .cls-3 {
+            stroke: #3fa957;
+            }
+
+            .cls-11 {
+            clip-path: url(#clippath);
+            }
+
+            .cls-5 {
+            letter-spacing: -.04em;
+            }
+
+            .cls-6 {
+            letter-spacing: .01em;
+            }
+
+            .cls-9 {
+            letter-spacing: -.03em;
+            }
+
+            .cls-10 {
+            letter-spacing: .04em;
+            }
+        </style>
+        <clipPath id="clippath">
+            <rect class="cls-1" y=".37" width="45.6" height="46.98"/>
+        </clipPath>
+    </defs>
+    <g id="Layer_1-2" >
+        <g>
+            <g id="Group_2" >
+                <g id="Group_1" >
+                    <g id="AUTOŠKOLA" class="cls-8">
+                        <text class="cls-9" transform="translate(69.73 19.13)"><tspan x="0" y="0">A</tspan></text>
+                        <text class="cls-7" transform="translate(82.85 19.13)"><tspan x="0" y="0">U</tspan></text>
+                        <text class="cls-4" transform="translate(96.46 19.13)"><tspan x="0" y="0">T</tspan></text>
+                        <text class="cls-7" transform="translate(104.9 19.13)"><tspan x="0" y="0">OŠ</tspan></text>
+                        <text class="cls-5" transform="translate(132.09 19.13)"><tspan x="0" y="0">K</tspan></text>
+                        <text class="cls-7" transform="translate(143.5 19.13)"><tspan x="0" y="0">O</tspan></text>
+                        <text class="cls-10" transform="translate(159.95 19.13)"><tspan x="0" y="0">L</tspan></text>
+                        <text class="cls-7" transform="translate(168.87 19.13)"><tspan x="0" y="0">A</tspan></text>
+                    </g>
+                    <g id="TEST" class="cls-8">
+                        <text class="cls-7" transform="translate(69.73 42.43)"><tspan x="0" y="0">TE</tspan></text>
+                        <text class="cls-6" transform="translate(89.03 42.43)"><tspan x="0" y="0">S</tspan></text>
+                        <text class="cls-7" transform="translate(100.02 42.43)"><tspan x="0" y="0">T</tspan></text>
+                    </g>
+                </g>
+            </g>
+            <g id="Group_4" >
+                <g class="cls-11">
+                    <g id="Group_3" >
+                        <path id="Path_1" class="cls-3" d="m45.6,39.21h-18.67c-11.69,0-21.22-9.37-21.41-21.06-.01-.12-.02-.23-.01-.35V1.06"/>
+                        <path id="Path_2" class="cls-3" d="m45.6,34.39h-18.11c-9.12,0-16.65-7.13-17.14-16.24,0-.3-.02-.6-.02-.92V1.06"/>
+                        <path id="Path_3" class="cls-3" d="m45.6,29.57h-17.81c-6.51,0-11.96-4.94-12.59-11.42-.04-.4-.06-.81-.06-1.23V1.06"/>
+                        <path id="Path_4" class="cls-2" d="m0,5.98h18.67c11.69,0,21.22,9.37,21.41,21.06.01.12.02.23.01.35v16.74"/>
+                        <path id="Path_5" class="cls-2" d="m0,10.79h18.11c9.12,0,16.65,7.13,17.14,16.24.01.3.03.61.03.91v16.18"/>
+                        <path id="Path_6" class="cls-2" d="m0,15.61h17.81c6.51,0,11.95,4.94,12.59,11.42.04.4.06.81.06,1.23v15.86"/>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

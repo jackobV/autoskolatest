@@ -1,6 +1,7 @@
 import './globals.css'
 import Link from "next/link";
-
+import logo from "../public/logo.svg"
+import Image from "next/image";
 export default function RootLayout({
   children,
 }: {
@@ -14,10 +15,12 @@ export default function RootLayout({
     </head>
       <body>
       <main>
-        <nav className="flex flex-row max-w-5xl mx-auto px-4 py-7 justify-between md:pr-5">
+        <nav className="flex flex-row max-w-5xl mx-auto px-4 py-7 justify-between md:pr-5 items-center">
 
           <div>
-            <Link href="/">autoskolatest.cz</Link>
+            <Link href="/">
+              <Image src={logo} alt={"loho"} />
+            </Link>
           </div>
           <div>
             <Link href="/blog">Blog</Link>

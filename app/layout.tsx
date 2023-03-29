@@ -14,7 +14,7 @@ export default function RootLayout({
     </head>
       <body>
       <main>
-        <nav className="flex flex-row max-w-5xl mx-auto px-4 pt-3 border-b-2 pb-2 justify-between md:pr-5">
+        <nav className="flex flex-row max-w-5xl mx-auto px-4 py-7 justify-between md:pr-5">
 
           <div>
             <Link href="/">autoskolatest.cz</Link>

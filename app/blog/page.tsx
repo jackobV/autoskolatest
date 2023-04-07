@@ -23,6 +23,26 @@ const posts = [
         datetime: '2023-03-26',
         category: { title: 'Návody & Tipy', href: '#' },
     },
+    {
+        id: 2,
+        title: 'Nové otázky 2023',
+        href: '/blog/nove_otazky_autoskola_2023',
+        description:
+            'Vše o nově vydané sadě otázek pro testy z teorie při závěrečných zkouškách autoškoly',
+        date: 'Bře 29, 2023',
+        datetime: '2023-03-29',
+        category: { title: 'Otázky', href: '#' },
+    },
+    {
+        id: 3,
+        title: 'Co očekávat při první jízdě v autoškole?',
+        href: '/blog/prvni_jizda_v_autoskole',
+        description:
+            'Co očekávat při první jízdě v autoškole? Na jaké věci si dát pozor a čeho je zbytečné se obávat.',
+        date: 'Dub 7, 2023',
+        datetime: '2023-04-07',
+        category: { title: 'Návody & Tipy', href: '#' },
+    },
     // More posts...
 ]
 

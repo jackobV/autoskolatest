@@ -2,6 +2,7 @@ import './globals.css'
 import Link from "next/link";
 import logo from "../public/logo_white.svg"
 import Image from "next/image";
+import Footer from "@/app/(components)/footer";
 export default function RootLayout({
   children,
 }: {
@@ -31,6 +32,7 @@ export default function RootLayout({
 
         {children}
       </main>
+      <Footer />
       </body>
     </html>
   )

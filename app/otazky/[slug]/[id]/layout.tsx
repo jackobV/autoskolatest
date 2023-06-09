@@ -6,9 +6,8 @@ interface SlugToIdMap {
 import { Metadata } from 'next'
 type Props = {
     params: { id: string }
-    searchParams: { [key: string]: string | string[] | undefined }
 }
-export function generateMetadata({ params, searchParams }: Props): Metadata {
+export function generateMetadata({ params }: Props): Metadata {
     return {
         title: "Otázka " + params.id + " - autoskolatest.cz",
     }

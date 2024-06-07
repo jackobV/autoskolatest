@@ -9,20 +9,32 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.0.3",
+    "@headlessui/tailwindcss": "^0.2.0",
     "@heroicons/react": "^2.0.16",
+    "@remixicon/react": "^4.2.0",
+    "@stripe/react-stripe-js": "^2.7.1",
+    "@stripe/stripe-js": "^3.5.0",
+    "@tremor/react": "^3.16.2",
     "@types/node": "18.15.1",
     "@types/react": "18.0.28",
     "@types/react-dom": "18.0.11",
+    "axios": "^1.6.8",
+    "eslint-config-next": "^14.2.2",
     "firebase": "^9.22.1",
-    "next": "13.2.4",
+    "next": "^14.2.3",
     "pocketbase": "^0.15.0",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "posthog-js": "^1.136.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.33.4",
+    "stripe": "^15.9.0",
     "typescript": "4.9.5"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.7",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.21",
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.4.3"
   }
 }

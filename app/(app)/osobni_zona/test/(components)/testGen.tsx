@@ -10,19 +10,21 @@ export default function TestGen({testData,setTestData,setTime}:{testData:Array<t
     setTestData:React.Dispatch.SetStateAction<Array<testQuestionFull>|null>,setTime:React.Dispatch.SetStateAction<number>}){
     const { user } = useAuth();
     const fetchQuestions = async () =>{
+        console.log("fetch questions");
         if(user?.category){
             const category = user.category
             const questionDat = localStorage.getItem("questions")
+            console.log("heyo")
             if(questionDat){
                 const questions = JSON.parse(questionDat)
                 const categorized = categorizeQuestions(questions)
-                console.log(categorized[category].viewed + "viewed")
-                console.log(category)
-
+                console.log(categorized)
                 const testSet = GenerateTestSet({category,categorized})
                 setTestData(testSet)
                 setTime(60*30)
                 console.log(testSet)
+            }else{
+                console.log("no questions")
             }
 
         }

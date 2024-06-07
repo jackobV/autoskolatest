@@ -1,4 +1,4 @@
-import {testQuestionLocalStorage} from "@/app/(app)/osobni_zona/test/(components)/interfaces";
+import { testQuestionLocalStorage } from "@/app/(app)/osobni_zona/test/(components)/interfaces";
 
 interface QuestionRecord {
     category: string;
@@ -14,34 +14,53 @@ interface QuestionRecord {
     viewed: boolean;
     expand: object;
 }
-function getRandomElement<T>(array: Array<testQuestionLocalStorage>):testQuestionLocalStorage{
-    const randomIndex = Math.floor(Math.random() * array.length);
-    return array[randomIndex];
-}
-export default function CategoryMixTestGen<T>(arrayAll: Array<testQuestionLocalStorage>, arrayUnvisited: Array<testQuestionLocalStorage>, numEntries: number): Array<testQuestionLocalStorage> {
-    const sorted:Array<testQuestionLocalStorage> = arrayAll
-    sorted.sort((a, b) => a.learnedProbability - b.learnedProbability)
-    let questionMix:Array<testQuestionLocalStorage> = []
-    if(arrayUnvisited.length != 0){
-        // There are questions that the user hasnt seen
-        if(numEntries==1){
-            //For zdravotnicka give user either one of unvisited or one of the least learned randomly
-            if(Math.random()<0.5){
-                const randomPosition = Math.random()
-                questionMix.push(getRandomElement(arrayUnvisited))
-            }else{
-                questionMix.push(...sorted.splice(0,numEntries))
-            }
-        }else{
-            const unvisitedToBePushed = Math.ceil(numEntries/2)
-            const visitedToBePushed = Math.floor(numEntries/2)
-            for (let i = 0; i<unvisitedToBePushed;i++){
-                questionMix.push(getRandomElement(arrayUnvisited))
-            }
-            questionMix.push(...sorted.splice(0,visitedToBePushed))
-        }
-    }else{
-        questionMix.push(...sorted.splice(0,numEntries))
+
+function getRandomElements<T>(array: Array<T>, count: number, existingIds: Set<string>): Array<T> {
+    const result: Array<T> = [];
+    // @ts-ignore
+    const availableElements = array.filter(item => !existingIds.has(item['id']));
+    while (result.length < count && availableElements.length > 0) {
+        const randomIndex = Math.floor(Math.random() * availableElements.length);
+        const [element] = availableElements.splice(randomIndex, 1);
+        result.push(element);
     }
-    return questionMix
+    return result;
+}
+
+export default function CategoryMixTestGen<T>(
+    arrayAll: Array<testQuestionLocalStorage>,
+    arrayUnvisited: Array<testQuestionLocalStorage>,
+    numEntries: number,
+    existingQuestions: Set<string>
+): Array<testQuestionLocalStorage> {
+    existingQuestions = existingQuestions || new Set<string>();
+
+    const sorted: Array<testQuestionLocalStorage> = arrayAll
+        .filter(q => !existingQuestions.has(q.id))
+        .sort((a, b) => a.learnedProbability - b.learnedProbability);
+
+    let questionMix: Array<testQuestionLocalStorage> = [];
+
+    if (arrayUnvisited.length > 0) {
+        const unvisitedToBePushed = Math.min(Math.ceil(numEntries / 2), arrayUnvisited.length);
+        const visitedToBePushed = numEntries - unvisitedToBePushed;
+
+        questionMix = [
+            ...getRandomElements(arrayUnvisited, unvisitedToBePushed, existingQuestions),
+            ...sorted.splice(0, visitedToBePushed)
+        ];
+    } else {
+        questionMix = sorted.splice(0, numEntries);
+    }
+
+    // Ensure we have the exact number of questions
+    while (questionMix.length < numEntries) {
+        const randomQuestions = getRandomElements(arrayAll, numEntries - questionMix.length, existingQuestions);
+        questionMix = [...questionMix, ...randomQuestions];
+    }
+
+    // Add IDs of selected questions to the existing set
+    questionMix.forEach(q => existingQuestions.add(q.id));
+
+    return questionMix;
 }

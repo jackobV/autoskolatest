@@ -7,6 +7,7 @@ const pbKey:string = ""
 const pb = new PocketBase('https://pocketbase-production-2a51.up.railway.app');
 
 export async function POST(req:Request,res:Response) {
+    console.log("hit")
     const requestHeaders = new Headers(req.headers)
     const body = await req.text()
     const signature:string|null = headers().get("stripe-signature");
@@ -17,8 +18,9 @@ export async function POST(req:Request,res:Response) {
             const userIDCompleted = checkoutSessionCompleted.metadata.userID;
             const emailCompleted = checkoutSessionCompleted.metadata.email;
             const categoryCompleted = checkoutSessionCompleted.metadata.category;
-
+            console.log("completed")
             await AssignQuestions({categoryID: categoryCompleted, userID: userIDCompleted})
+            console.log("assigned")
             break;
         case 'checkout.session.expired':
             const checkoutSessionExpired = event.data.object;

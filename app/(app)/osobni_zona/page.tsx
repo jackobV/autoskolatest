@@ -17,13 +17,6 @@ export default function Page() {
     const { user, loading } = useAuth();
     const [prevResults, setPrevResults] = useState<Array<prevTestResults> | null>(null);
     const [loadingData, setLoadingData] = useState(true);
-    const [questions, setQuestions] = useState<testQuestionLocalStorage[]>(() => {
-        const storedQuestions = localStorage.getItem("questions");
-        if (storedQuestions) {
-            return JSON.parse(storedQuestions);
-        }
-        return []; // Return an empty array if nothing is stored
-    });
     useEffect(() => {
         if (!loading && !user) {
             redirect('/unauthorized');

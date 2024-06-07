@@ -2,10 +2,8 @@ import PocketBase from "pocketbase";
 import {headers} from "next/headers";
 import AssignQuestions from "@/app/(app)/api/checkoutCompleted/assignQuestions";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
-const webhookSecret:string = ""
+const webhookSecret:string = "whsec_HMqAVcg855kag6gd23KyMDYdhMAZCqRA"
 const pbKey:string = ""
-const pb = new PocketBase('https://pocketbase-production-2a51.up.railway.app');
-
 export async function POST(req:Request,res:Response) {
     console.log("hit")
     const requestHeaders = new Headers(req.headers)

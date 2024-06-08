@@ -18,8 +18,9 @@ export default function TestGen({testData,setTestData,setTime}:{testData:Array<t
             if(questionDat){
                 const questions = JSON.parse(questionDat)
                 const categorized = categorizeQuestions(questions)
-                console.log(categorized)
+                console.log("categorized done")
                 const testSet = GenerateTestSet({category,categorized})
+                console.log("testset done")
                 setTestData(testSet)
                 setTime(60*30)
                 console.log(testSet)

@@ -6,9 +6,10 @@ import CategoryMixTestGen from "@/app/(app)/osobni_zona/test/(generateTest)/Cate
 export function GenerateTestSet({ category, categorized }: { category: string, categorized: CategorizedQuestions }): Array<testQuestionFull> {
     const userCat = category;
     const existingQuestions = new Set<string>();
-
     const pojmy = CategoryMixTestGen(categorized.am7fli1w8fckmmm.viewed, categorized.am7fli1w8fckmmm.notViewed, 3, existingQuestions);
+    console.log(pojmy);
     const jizda = CategoryMixTestGen(categorized.m447h3rqjy9vmve.viewed, categorized.m447h3rqjy9vmve.notViewed, 4, existingQuestions);
+    console.log(jizda);
     const ostatni = CategoryMixTestGen(categorized.sf10my3uhqik14q.viewed, categorized.sf10my3uhqik14q.notViewed, 3, existingQuestions);
     const specific = CategoryMixTestGen(categorized[userCat]["viewed"], categorized[userCat]["notViewed"], 4, existingQuestions);
     const znacky = CategoryMixTestGen(categorized.lfw9b1mdl1a7ao9.viewed, categorized.lfw9b1mdl1a7ao9.notViewed, 3, existingQuestions);
@@ -18,15 +19,15 @@ export function GenerateTestSet({ category, categorized }: { category: string, c
     const zdravotnicka = CategoryMixTestGen(categorized.oqw98ds03hofyhb.viewed, categorized.oqw98ds03hofyhb.notViewed, 1, existingQuestions);
 
     const combined = [...pojmy, ...jizda, ...ostatni, ...specific, ...znacky, ...situace, ...podminky, ...predpisy, ...zdravotnicka];
-
+    console.log(combined)
     // Ensure there are exactly 25 questions
     const questionsCombinedTestVersion: Array<testQuestionFull> = combined.slice(0, 25).map((item, index) => {
         let points: number;
         if (index < 14) {
             points = 2;
-        } else if (index >= 14 && index < 16) {
+        } else if (index >= 14 && index < 17) {
             points = 1;
-        } else if (index >= 16 && index < 20) {
+        } else if (index >= 17 && index < 20) {
             points = 4;
         } else if (index >= 20 && index < 22) {
             points = 1;

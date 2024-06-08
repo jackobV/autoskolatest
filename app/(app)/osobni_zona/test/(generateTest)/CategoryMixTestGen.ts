@@ -1,28 +1,12 @@
 import { testQuestionLocalStorage } from "@/app/(app)/osobni_zona/test/(components)/interfaces";
 
-interface QuestionRecord {
-    category: string;
-    collectionId: string;
-    collectionName: string;
-    created: string;
-    id: string;
-    learned: boolean;
-    learned_probability: number;
-    question: string;
-    updated: string;
-    user: string;
-    viewed: boolean;
-    expand: object;
-}
-
 function getRandomElements<T>(array: Array<T>, count: number, existingIds: Set<string>): Array<T> {
     const result: Array<T> = [];
     // @ts-ignore
     const availableElements = array.filter(item => !existingIds.has(item['id']));
-    while (result.length < count && availableElements.length > 0) {
+    for (let i = 0; i < count && availableElements.length > 0; i++) {
         const randomIndex = Math.floor(Math.random() * availableElements.length);
-        const [element] = availableElements.splice(randomIndex, 1);
-        result.push(element);
+        result.push(availableElements.splice(randomIndex, 1)[0]);
     }
     return result;
 }
@@ -35,28 +19,28 @@ export default function CategoryMixTestGen<T>(
 ): Array<testQuestionLocalStorage> {
     existingQuestions = existingQuestions || new Set<string>();
 
-    const sorted: Array<testQuestionLocalStorage> = arrayAll
-        .filter(q => !existingQuestions.has(q.id))
-        .sort((a, b) => a.learnedProbability - b.learnedProbability);
+    // Filter out questions that are already in existingQuestions
+    const filteredAll = arrayAll.filter(q => !existingQuestions.has(q.id));
+    const sorted: Array<testQuestionLocalStorage> = filteredAll.sort((a, b) => a.learnedProbability - b.learnedProbability);
 
     let questionMix: Array<testQuestionLocalStorage> = [];
 
     if (arrayUnvisited.length > 0) {
-        const unvisitedToBePushed = Math.min(Math.ceil(numEntries / 2), arrayUnvisited.length);
-        const visitedToBePushed = numEntries - unvisitedToBePushed;
-
-        questionMix = [
-            ...getRandomElements(arrayUnvisited, unvisitedToBePushed, existingQuestions),
-            ...sorted.splice(0, visitedToBePushed)
-        ];
-    } else {
-        questionMix = sorted.splice(0, numEntries);
+        const unvisitedToBePushed = Math.min(numEntries, arrayUnvisited.length);
+        questionMix = getRandomElements(arrayUnvisited, unvisitedToBePushed, existingQuestions);
     }
 
-    // Ensure we have the exact number of questions
-    while (questionMix.length < numEntries) {
-        const randomQuestions = getRandomElements(arrayAll, numEntries - questionMix.length, existingQuestions);
-        questionMix = [...questionMix, ...randomQuestions];
+    if (questionMix.length < numEntries) {
+        const remainingNeeded = numEntries - questionMix.length;
+        const additionalQuestions = sorted.slice(0, remainingNeeded);
+        questionMix = [...questionMix, ...additionalQuestions];
+    }
+
+    // If still not enough questions, fill in with additional random questions, ensuring no duplicates
+    if (questionMix.length < numEntries) {
+        const remainingNeeded = numEntries - questionMix.length;
+        const additionalRandomQuestions = getRandomElements(filteredAll, remainingNeeded, existingQuestions);
+        questionMix = [...questionMix, ...additionalRandomQuestions];
     }
 
     // Add IDs of selected questions to the existing set

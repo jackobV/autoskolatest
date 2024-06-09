@@ -52,13 +52,19 @@ export default function PreviousTestResultsGraph({prevTestResults, loading}: {
 
     return(
         <div className="w-full max-w-xl">
-            {loading?<div>loading</div>:
+            {loading?
+                <Card className="w-full max-w-xl h-48 flex flex-col justify-between">
+
+                </Card>
+                :
                 <div className="w-full max-w-xl">
                     <Card className="w-full max-w-xl h-48">
                         {prevTestResults?
                             <LineChart data={filteredItems} categories={["Body"]} index={"index"} showXAxis={false} yAxisWidth={20} customTooltip={customTooltip} showLegend={false} className=" w-full max-w-xl h-40" />
                         :
-                            <p>d</p>
+                            <div className={"flex flex-col w-full h-full items-center justify-center"}>
+                                <p className="text-white text-center">Zde uvidíte graf historie výsledků</p>
+                            </div>
                         }
                     </Card>
 

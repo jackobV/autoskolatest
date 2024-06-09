@@ -17,6 +17,7 @@ export default function Page() {
     const { user, loading } = useAuth();
     const [prevResults, setPrevResults] = useState<Array<prevTestResults> | null>(null);
     const [loadingData, setLoadingData] = useState(true);
+
     useEffect(() => {
         if (!loading && !user) {
             redirect('/unauthorized');
@@ -62,9 +63,6 @@ export default function Page() {
         }
     }, [user, loading]);
 
-    if (loading) {
-        return <div>Loading...</div>;
-    }
 
     return (
         <div className="h-screen dark:bg-dark-tremor-background-subtle">
@@ -76,7 +74,7 @@ export default function Page() {
                 <div className="w-full pt-10">
                     <StartATestBanner />
                 </div>
-                <div className="w-full pt-10"><ShowCategories /></div>
+                <div className="w-full pt-10">{user && !loading ? <ShowCategories />:<div></div> }</div>
             </div>
         </div>
     );

@@ -109,6 +109,7 @@ export default function Register(){
                             "password": password,
                             "passwordConfirm": passwordAgain,
                             "name": name,
+                            "category":selectedCategory
                         };
                         const user = await pb.collection('users').create(data);
                         setUserId(user.id)

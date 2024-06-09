@@ -5,6 +5,7 @@ import {NextResponse} from "next/server";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 const webhookSecret:string = "whsec_ZI0JD5ipBTmeUG3AVUqglRqaEbpkx1aV"
 const pbKey:string = ""
+export const maxDuration = 60;
 export async function POST(req:Request,res:Response) {
     console.log("hit")
     const requestHeaders = new Headers(req.headers)

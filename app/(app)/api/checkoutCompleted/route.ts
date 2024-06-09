@@ -3,7 +3,7 @@ import {headers} from "next/headers";
 import AssignQuestions from "@/app/(app)/api/checkoutCompleted/assignQuestions";
 import {NextResponse} from "next/server";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
-const webhookSecret:string = "whsec_HMqAVcg855kag6gd23KyMDYdhMAZCqRA"
+const webhookSecret:string = "whsec_ZI0JD5ipBTmeUG3AVUqglRqaEbpkx1aV"
 const pbKey:string = ""
 export async function POST(req:Request,res:Response) {
     console.log("hit")

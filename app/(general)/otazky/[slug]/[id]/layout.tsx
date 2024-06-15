@@ -4,6 +4,8 @@ interface SlugToIdMap {
     [key: string]: string;
 }
 import { Metadata } from 'next'
+import {CSPostHogProvider} from "@/app/providers";
+import SideBannerAd from "@/app/(general)/otazky/(components)/sideBannerAd";
 type Props = {
     params: { id: string }
 }
@@ -63,13 +65,26 @@ export default async function QuestionLayout({children,params}: { children: Reac
     next = next.substring(7)
     prev = prev.substring(7)
     return(
+        <CSPostHogProvider>
         <div className=" ">
             <div className="flex flex-col max-w-5xl mx-auto px-4">
                 <nav className="md:text-lg pb-5 pt-5 tracking-tight subpixel-antialiased"><h2 className="inline text-gray-400">Otázky autoškola teorie</h2><h2 className="inline text-gray-400 px-4">/</h2><a href="/otazky/"><h2 className="inline text-gray-400">okruhy</h2></a><h2 className="text-gray-400 inline px-4">/</h2><a href={`/otazky/${params.slug}/`}><h2 className="inline text-gray-400">{categoryTitle}</h2></a><h2 className="text-gray-400 inline px-4">/</h2><h2 className="inline">{params.id}</h2></nav>
                 <div className="flex flex-col md:flex-row gap-x-4 gap-y-4">
                     <div className="md:w-8/12">{children}</div>
-                    <div className="flex flex-col flex-row bg-white rounded-xl w-full md:w-96 h-fit px-4 py-4 h-40 w-fit text-sm gap-y-2"><a href={`/otazky/${params.slug}/`}  className="bg-[#F8BC00] text-white w-fit px-2 py-1 rounded-xl">{categoryTitle}</a><a className="bg-[#378F2D] text-white w-fit px-2 py-1 rounded-xl" href={`/otazky/${params.slug}/${next}`}>Další otázka </a><a className="bg-[#AFCA00] text-white w-fit px-2 py-1 rounded-xl" href={`/otazky/${params.slug}/${prev}`}>Předchozí otázka </a></div>
+                    <div className='flex flex-col gap-y-4'>
+                        <div
+                            className="flex flex-col flex-row bg-white rounded-xl w-full md:w-96 h-fit px-4 py-4 h-40 w-fit text-sm gap-y-2">
+                            <a href={`/otazky/${params.slug}/`}
+                               className="bg-[#F8BC00] text-white w-fit px-2 py-1 rounded-xl">{categoryTitle}</a><a
+                            className="bg-[#378F2D] text-white w-fit px-2 py-1 rounded-xl"
+                            href={`/otazky/${params.slug}/${next}`}>Další otázka </a><a
+                            className="bg-[#AFCA00] text-white w-fit px-2 py-1 rounded-xl"
+                            href={`/otazky/${params.slug}/${prev}`}>Předchozí otázka </a></div>
+                        <SideBannerAd />
+                    </div>
                 </div>
             </div>
-        </div>)
+        </div>
+        </CSPostHogProvider>
+    )
 }

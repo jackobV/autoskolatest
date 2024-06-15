@@ -3,6 +3,7 @@ import Link from "next/link";
 import logo from "../../public/logo_white.svg"
 import Image from "next/image";
 import Footer from "@/app/(general)/(components)/footer";
+import {CSPostHogProvider} from "@/app/providers";
 export default function RootLayout({
   children,
 }: {
@@ -10,6 +11,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="cs">
+    <CSPostHogProvider>
     <head>
       <meta name="author" content="Jakub Záloha" />
       <meta name="keywords" content="autoškola test, autoškola testy, testy z autoškoly, testy řidičák" />
@@ -29,11 +31,12 @@ export default function RootLayout({
           </div>
         </nav>
         </div>
-
         {children}
       </main>
       <Footer />
       </body>
+      </CSPostHogProvider>
+
     </html>
   )
 }

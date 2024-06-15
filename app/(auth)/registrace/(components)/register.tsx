@@ -153,12 +153,12 @@ export default function Register(){
     };
 
     return(
-        <div className="w-full  flex flex-col h-full">
+        <div className="w-full min-h-screen flex flex-col justify-center h-full">
             {registerComplete ?
                 <div className="w-full mx-auto max-w-2xl h-full bg-gray-800 my-10 rounded-lg overflow-hidden">
                     <EstablishCheckout email={email} category={selectedCategory} userId={userId} />
                 </div> :
-                <div className="mx-auto w-full max-w-lg pt-72 ">
+                <div className="mx-auto w-full max-w-lg px-10">
 
                     <form className="flex flex-col md:flex-row gap-y-10 bg-gray-800 py-6 px-4 w-full rounded-xl  "
                           onSubmit={handleSubmit}>

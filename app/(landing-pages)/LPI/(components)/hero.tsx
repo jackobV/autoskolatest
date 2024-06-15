@@ -4,13 +4,12 @@ import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from "../../../(app)/osobni_zona/(parent_components)/logoiconlg.png"
 import logotwo from "../../../../public/logo_white.svg"
-import appscreenshot from "../(components)/appscreenshot.png"
+import appscreenshot from "../(components)/appssii.png"
+import appssmii from "./appssmii.png"
 import Image from "next/image";
-const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+import StatsILPI from "@/app/(landing-pages)/LPI/(components)/statsILPI";
+const navigation: any[] = [
+
 ]
 
 export default function HeroLPI() {
@@ -22,8 +21,8 @@ export default function HeroLPI() {
                 <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                     <div className="flex lg:flex-1">
                         <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
-                            <Image src={logotwo} alt={"logo"} className="w-auto h-8" />
+                            <span className="sr-only">Autoskolatest.cz</span>
+                            <Image src={logotwo} alt={"autoskolatest.cz logo"} className="w-auto h-8" />
                         </a>
                     </div>
                     <div className="flex lg:hidden">
@@ -32,7 +31,7 @@ export default function HeroLPI() {
                             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400"
                             onClick={() => setMobileMenuOpen(true)}
                         >
-                            <span className="sr-only">Open main menu</span>
+                            <span className="sr-only">Otevřít hlavní menu</span>
                             <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                         </button>
                     </div>
@@ -44,8 +43,8 @@ export default function HeroLPI() {
                         ))}
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                        <a href="#" className="text-sm font-semibold leading-6 text-white">
-                            Log in <span aria-hidden="true">&rarr;</span>
+                        <a href="/osobni_zona" className="text-sm font-semibold leading-6 text-white">
+                            Přihlásit se <span aria-hidden="true">&rarr;</span>
                         </a>
                     </div>
                 </nav>
@@ -54,15 +53,15 @@ export default function HeroLPI() {
                     <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-white/10">
                         <div className="flex items-center justify-between">
                             <a href="#" className="-m-1.5 p-1.5">
-                                <span className="sr-only">Your Company</span>
-                                <Image src={logo} alt={"logo"} className="w-8 h-8" />
+                                <span className="sr-only">autoskolatest.cz</span>
+                                <Image src={logo} alt={" autoskolatest.cz logo"} className="w-8 h-8" />
                             </a>
                             <button
                                 type="button"
                                 className="-m-2.5 rounded-md p-2.5 text-gray-400"
                                 onClick={() => setMobileMenuOpen(false)}
                             >
-                                <span className="sr-only">Close menu</span>
+                                <span className="sr-only">Zavřít menu</span>
                                 <XMarkIcon className="h-6 w-6" aria-hidden="true" />
                             </button>
                         </div>
@@ -81,10 +80,10 @@ export default function HeroLPI() {
                                 </div>
                                 <div className="py-6">
                                     <a
-                                        href="#"
+                                        href="/osobni_zona"
                                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-white hover:bg-gray-800"
                                     >
-                                        Log in
+                                        Přihlásit se
                                     </a>
                                 </div>
                             </div>
@@ -113,19 +112,23 @@ export default function HeroLPI() {
                                 Zajisti si úspěch u teorie z autoškoly
                             </h1>
                             <p className="mt-6 text-lg leading-8 text-gray-300">
-                                Nejjistější řešení v přípravě na teoretické testy v autoškole. Za pomocí algoritmu, který se přizpůsobí přesně tvým potřebám ti garantujeme úspěch!
+
+                                Běž na test bez stresu a s jistotou, že ho zvládneš na první pokus. Vše díky <strong>AI algoritmu</strong>, který ti přizpůsobí přípravu na míru.
                             </p>
                             <div className="mt-10 flex items-center justify-center gap-x-6">
                                 <a
                                     href="#"
                                     className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-400"
                                 >
-                                    Get started
+                                    Vyzkoušet zdarma
                                 </a>
-                                <a href="#" className="text-sm font-semibold leading-6 text-white">
-                                    Learn more <span aria-hidden="true">→</span>
+                                <a href="#comparison" className="text-sm font-semibold leading-6 text-white">
+                                    Chci znát více <span aria-hidden="true">→</span>
                                 </a>
                             </div>
+                        </div>
+                        <div className={" pt-12 text-white text-center"}>
+                            <StatsILPI />
                         </div>
                         <Image
                             src={appscreenshot}

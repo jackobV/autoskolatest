@@ -21,7 +21,7 @@ export default function FeaturesAfirmCheckout(){
                 <div className="">
                     <Image src={logo} alt={"logo"} className="h-12 w-auto" />
                 </div>
-                <div className="pt-40">
+                <div className="py-20">
                     <p className="text-white font-bold text-2xl tracking-wide">
                         Zajisti si úspěch v autoškole
                     </p>

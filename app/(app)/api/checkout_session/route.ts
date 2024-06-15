@@ -33,7 +33,7 @@ export async function POST(req:Request,res:Response) {
             mode: 'payment',
             allow_promotion_codes:true,
             locale:"auto",
-            return_url: `${requestHeaders.get("origin")?.valueOf()}/rezervacepotvrzena?success=true&csid=${checkou_session_database.id}`,
+            return_url: `${requestHeaders.get("origin")?.valueOf()}/osobni_zona`,
         });
         console.log(session)
         return new Response(JSON.stringify({clientSecret: session.client_secret}));

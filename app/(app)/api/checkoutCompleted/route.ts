@@ -2,6 +2,7 @@ import PocketBase from "pocketbase";
 import {headers} from "next/headers";
 import AssignQuestions from "@/app/(app)/api/checkoutCompleted/assignQuestions";
 import {NextResponse} from "next/server";
+import SendMail from "@/app/(app)/api/checkoutCompleted/sendMail";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 const webhookSecret:string = "whsec_ZI0JD5ipBTmeUG3AVUqglRqaEbpkx1aV"
 const pbKey:string = ""
@@ -20,6 +21,7 @@ export async function POST(req:Request,res:Response) {
             const categoryCompleted = checkoutSessionCompleted.metadata.category;
             console.log("completed")
             await AssignQuestions({categoryID: categoryCompleted, userID: userIDCompleted})
+            await SendMail({recipient:emailCompleted})
             console.log("assigned")
             break;
         case 'checkout.session.expired':

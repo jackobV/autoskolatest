@@ -88,7 +88,8 @@ function classNames(...classes:any[]) {
 
 export default function CompetitionComparison() {
     return (
-        <div className="bg-gray-900 py-24 sm:py-32">
+        <div className="bg-gray-900 py-24 sm:py-32" id={"comparison" +
+            ""}>
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto max-w-4xl text-center">
                     <p className="mt-2 text-2xl font-bold tracking-tight text-white sm:text-4xl">

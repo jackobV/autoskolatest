@@ -14,7 +14,7 @@ export default function PreviousXResultsBar({ previousResults, loading }: { prev
     const [trackerData, setTrackerData] = useState<Array<tracker>>([]);
     useEffect(() => {
         if (previousResults && previousResults.length > 0) {
-            const resultsToConsider = previousResults.slice(0, numberOfPrevAvg);
+            const resultsToConsider = previousResults.slice(-numberOfPrevAvg);
             const totalScore = resultsToConsider.reduce((sum, result) => sum + result.score, 0);
             const avgScore = totalScore / resultsToConsider.length;
             const avgPercentage = Math.floor((avgScore / 50) * 100);

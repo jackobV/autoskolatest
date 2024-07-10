@@ -1,21 +1,29 @@
-import { CloudArrowUpIcon, LockClosedIcon, ServerIcon } from '@heroicons/react/20/solid'
-
+import {
+    BoltIcon,
+    ChartBarIcon,
+    CheckBadgeIcon,
+    CloudArrowUpIcon,
+    LockClosedIcon,
+    ServerIcon
+} from '@heroicons/react/20/solid'
+import Image from "next/image";
+import appscreenshot from "./appscreenshot.png"
 const features = [
     {
         name: 'Chytrý algoritmu,',
         description:
             'který ti podle tvých předešlích výsledků sestavý každý test na míru. Díky tomu tě u skutečné zkoušky nezaskočí žádná otázka',
-        icon: CloudArrowUpIcon,
+        icon: BoltIcon,
     },
     {
         name: 'Podrobná statistika',
         description: 'tvých předešlých výsledků ti dodá jistotu a zbavý tě stresu před testem.',
-        icon: LockClosedIcon,
+        icon: ChartBarIcon,
     },
     {
         name: 'Garance úspěchu.',
         description: 'Pokud se ti nepovede zvládnout zkoušku na první pokus, vrátíme ti celou částku. S námi prostě získáš jistotu.',
-        icon: ServerIcon,
+        icon: CheckBadgeIcon,
     },
 ]
 
@@ -44,8 +52,8 @@ export default function FeatureILPI() {
                             </dl>
                         </div>
                     </div>
-                    <img
-                        src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png"
+                    <Image
+                        src={appscreenshot}
                         alt="Product screenshot"
                         className="w-[48rem] max-w-none rounded-xl shadow-xl ring-1 ring-white/10 sm:w-[57rem] md:-ml-4 lg:-ml-0"
                         width={2432}

@@ -19,7 +19,7 @@ import MarkTest from "@/app/(app)/osobni_zona/test/(components)/markTest";
 
 export default function Page() {
     const [testInProgress, setTestInProgress] = useState<boolean>(false);
-    const [currentQuestion, setCurrentQuestion] = useState(1);
+    const [currentQuestion, setCurrentQuestion] = useState(0);
     const [testData, setTestData] = useState<Array<testQuestionFull> | null>(null);
     const [showIndexOnMobile, setShowIndexOnMobile] = useState(true);
     const [testDataFinished, setTestDataFinished] = useState<testResultData | null>(null);

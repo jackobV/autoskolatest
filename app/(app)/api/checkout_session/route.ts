@@ -26,14 +26,14 @@ export async function POST(req:Request,res:Response) {
             line_items: [
                 {
                     // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                    price: "price_1PPhWtIEUnHwRV0oYVk5gprL",
+                    price: "price_1PS9tQIEUnHwRV0oOzqChj5d",
                     quantity: 1,
                 },
             ],
             mode: 'payment',
             allow_promotion_codes:true,
             locale:"auto",
-            return_url: `${requestHeaders.get("origin")?.valueOf()}/osobni_zona`,
+            return_url: `${requestHeaders.get("origin")?.valueOf()}/purchase_info?purchaseConfirmed=true`,
         });
         console.log(session)
         return new Response(JSON.stringify({clientSecret: session.client_secret}));

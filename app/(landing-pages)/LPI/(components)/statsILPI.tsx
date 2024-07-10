@@ -1,7 +1,7 @@
 const stats = [
     { id: 1, name: 'Získaných řidičáků', value: '1,500+' },
     { id: 2, name: 'Zvládlo test na první pokus', value: '98%' },
-    { id: 3, name: 'Rychlejší zvládnutí všech otázek', value: '~70%' },
+    { id: 3, name: 'Rychlejší ovládnutí všech otázek', value: '~70%' },
     { id: 4, name: 'Zbavení stresu', value: '100%' },
 ]
 

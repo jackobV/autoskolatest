@@ -1,42 +1,42 @@
 import {
-    ArrowPathIcon,
+    ArrowPathIcon, Battery100Icon,
     CloudArrowUpIcon,
-    Cog6ToothIcon,
-    FingerPrintIcon,
+    Cog6ToothIcon, FaceFrownIcon,
+    FingerPrintIcon, HandThumbUpIcon, KeyIcon,
     LockClosedIcon,
-    ServerIcon,
+    ServerIcon, SparklesIcon,CalendarIcon,
 } from '@heroicons/react/20/solid'
 
 const features = [
     {
-        name: 'Budeš dokonale znát všechny otázky.',
+        name: 'Dokonalá příprava.',
         description: 'Nepřekvapí tě žádná otázka, metodicky si projdeš a zdokonalíš všechny otázky.',
-        icon: CloudArrowUpIcon,
+        icon: SparklesIcon,
     },
     {
         name: 'Nenecháš nic náhodě.',
         description: 'Budeš mít k dispozici podrobné statistiky o tvých výsledcích.',
-        icon: LockClosedIcon,
+        icon: KeyIcon,
     },
     {
         name: 'Na zkoušku nepůjdeš ve stresu.',
         description: 'Díky přehledu o tom, jak si v testech vedeš tě u zkoušky nepřepadne nervozita.',
-        icon: ArrowPathIcon,
+        icon: FaceFrownIcon,
     },
     {
         name: 'Nic tě nenecháme zapomenout.',
         description: 'Náš algoritmus využívá metody fázového opakování. Otázky ti tedy ve správnou dobu připomene. ',
-        icon: FingerPrintIcon,
+        icon: Battery100Icon,
     },
     {
         name: 'Na test se naučíš o ~70% rychleji.',
-        description: 'Ideální řešení, pokud se nacházíš v časovém pressu.',
-        icon: Cog6ToothIcon,
+        description: 'Ideální řešení, pokud se nacházíš v časovém presu.',
+        icon: CalendarIcon,
     },
     {
         name: 'Garance úspěchu.',
         description: 'Pokud zkoušku nedáš na první pokus, vrátíme ti celou částku.',
-        icon: ServerIcon,
+        icon: HandThumbUpIcon,
     },
 ]
 

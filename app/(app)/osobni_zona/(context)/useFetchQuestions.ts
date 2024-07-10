@@ -70,9 +70,13 @@ const useFetchQuestions = () => {
 
             localStorage.setItem('questions', JSON.stringify(questionsIndexed));
         };
+        const questions = localStorage.getItem('questions');
 
-        if (!localStorage.getItem('questions')) {
+        if (!questions || JSON.parse(questions).length === 0 || JSON.parse(questions).length === undefined) {
+            console.log("No questions found.");
             fetchData();
+        }else{
+            console.log(JSON.parse(questions).length)
         }
     }, [user, loading]); // Depend on user and loading state
 };

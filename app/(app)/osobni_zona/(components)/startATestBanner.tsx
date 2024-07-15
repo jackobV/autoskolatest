@@ -23,7 +23,7 @@ export default function StartATestBanner() {
                         <p className="">počet testových otázek: 25</p>
                     </li>
                 </ul>
-                <button className="px-20 py-4 bg-white rounded-xl text-tremor-content-strong font-semibold">Spustit test</button>
+                <a className="px-20 py-4 bg-white rounded-xl text-tremor-content-strong font-semibold" href={"https://www.autoskolatest.cz/osobni_zona/test"}>Spustit test</a>
 
             </div>
 

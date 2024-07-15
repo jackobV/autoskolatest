@@ -27,7 +27,7 @@ export async function POST(req:Request,res:Response) {
                 subject: "Děkujeme za zakoupení!",
                 message:"Nyní již můžete používat aplikaci"
             }
-            await sendEmail(emailData);
+            sendEmail(emailData);
             console.log("assigned")
             break;
         case 'checkout.session.expired':

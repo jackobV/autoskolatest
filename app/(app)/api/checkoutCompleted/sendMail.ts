@@ -1,13 +1,25 @@
-export default async function SendMail({recipient}: {recipient: string}) {
-    var postmark = require("postmark");
-    var client = new postmark.ServerClient("18f5196c-1374-424f-b386-e6d171f300e7");
-    client.sendEmail({
-        "From": "jakubzaloha@na-zkousku.cz",
-        "To": recipient,
-        "Subject": "Děkujeme za zakoupení autoskolatest.cz",
-        "HtmlBody": "<strong>Děkujeme!</strong> Neváhejte se na nás kdykoliv obrátít!.",
-        "TextBody": "Děkujeme! Neváhejte se na nás kdykoliv obrátít!",
-        "MessageStream": "outbound"
-    });
-    return ("ok")
+import postmark from 'postmark';
+// @ts-ignore
+const postmarkClient = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN);
+
+// @ts-ignore
+export default async function sendEmail({ to, from, subject, message }) {
+    const emailData = {
+        From: from,
+        To: to,
+        Subject: subject,
+        HtmlBody: message,
+    };
+
+    try {
+        const result = await postmarkClient.sendEmail(emailData);
+        console.log('Email sent successfully!');
+        return result;
+    } catch (error) {
+        console.error('Error sending email:', error);
+        throw error;
+    }
 }
+
+		
+    

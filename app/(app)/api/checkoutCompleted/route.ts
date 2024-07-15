@@ -2,7 +2,7 @@ import PocketBase from "pocketbase";
 import {headers} from "next/headers";
 import AssignQuestions from "@/app/(app)/api/checkoutCompleted/assignQuestions";
 import {NextResponse} from "next/server";
-import SendMail from "@/app/(app)/api/checkoutCompleted/sendMail";
+import sendEmail from "@/app/(app)/api/checkoutCompleted/sendMail";
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY)
 const webhookSecret:string = "whsec_ZI0JD5ipBTmeUG3AVUqglRqaEbpkx1aV"
 const pbKey:string = ""
@@ -21,7 +21,13 @@ export async function POST(req:Request,res:Response) {
             const categoryCompleted = checkoutSessionCompleted.metadata.category;
             console.log("completed")
             await AssignQuestions({categoryID: categoryCompleted, userID: userIDCompleted})
-            await SendMail({recipient:emailCompleted})
+            const emailData = {
+                to: emailCompleted,
+                from: "jakubzaloha@na-zkousku.cz",
+                subject: "Děkujeme za zakoupení!",
+                message:"Nyní již můžete používat aplikaci"
+            }
+            await sendEmail(emailData);
             console.log("assigned")
             break;
         case 'checkout.session.expired':

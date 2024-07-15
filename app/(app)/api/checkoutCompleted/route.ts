@@ -22,7 +22,7 @@ export async function POST(req:Request,res:Response) {
             console.log("completed")
             await AssignQuestions({categoryID: categoryCompleted, userID: userIDCompleted})
             const emailData = {
-                to: emailCompleted,
+                to: "test@blackhole.postmarkapp.com",
                 from: "jakubzaloha@na-zkousku.cz",
                 subject: "Děkujeme za zakoupení!",
                 message:"Nyní již můžete používat aplikaci"

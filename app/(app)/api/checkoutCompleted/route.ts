@@ -17,7 +17,7 @@ export async function POST(req:Request,res:Response) {
         case 'checkout.session.completed':
             const checkoutSessionCompleted = event.data.object;
             const userIDCompleted = checkoutSessionCompleted.metadata.userID;
-            const emailCompleted = checkoutSessionCompleted.metadata.email;
+            const emailCompleted = checkoutSessionCompleted.customer_details.email;
             const categoryCompleted = checkoutSessionCompleted.metadata.category;
             console.log("completed")
             await AssignQuestions({categoryID: categoryCompleted, userID: userIDCompleted})

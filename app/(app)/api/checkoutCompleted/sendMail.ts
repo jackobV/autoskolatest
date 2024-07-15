@@ -1,4 +1,4 @@
-import postmark from 'postmark';
+var postmark = require("postmark");
 // @ts-ignore
 const postmarkClient = new postmark.ServerClient(process.env.POSTMARK_SERVER_TOKEN);
 

@@ -62,11 +62,7 @@ export default function Register(){
         setRegisterComplete(true)
     }
     function validatePassword(){
-        if(passwordAgain === password){
-            return(true)
-        }else{
-            return(false)
-        }
+        return true
     }
     function validateForm(){
             if(email !== ""){
@@ -107,7 +103,7 @@ export default function Register(){
                             "email": email,
                             "emailVisibility": true,
                             "password": password,
-                            "passwordConfirm": passwordAgain,
+                            "passwordConfirm": password,
                             "name": name,
                             "category":selectedCategory
                         };
@@ -153,68 +149,71 @@ export default function Register(){
     };
 
     return(
-        <div className="w-full min-h-screen flex flex-col justify-center h-full">
+        <div className="w-full min-h-screen flex flex-col md:justify-center h-full">
             {registerComplete ?
-                <div className="w-full mx-auto max-w-2xl h-full bg-gray-800 my-10 rounded-lg overflow-hidden">
+                <div className="w-full mx-auto max-w-2xl px-6 h-full  py-6 rounded-md rounded-t-none md:rounded-t-md overflow-hidden">
                     <EstablishCheckout email={email} category={selectedCategory} userId={userId} />
                 </div> :
-                <div className="mx-auto w-full max-w-lg px-10">
-
-                    <form className="flex flex-col md:flex-row gap-y-10 bg-gray-800 py-6 px-4 w-full rounded-xl  "
+                <div className="mx-auto w-full max-w-lg px-6 md:px-10">
+                    <form className="flex flex-col md:flex-row gap-y-10 bg-gray-800 pt-2 py-6 md:py-6 px-4 w-full rounded-md rounded-t-none md:rounded-t-md  "
                           onSubmit={handleSubmit}>
                         <div className="w-full">
                             <div className="flex flex-col gap-y-5 w-full ">
+                                <div className={"flex flex-row text-white font-semibold tracking-wide text-xl"}>Registrace</div>
                                 <div className="flex flex-col w-full gap-y-3 relative">
-                                    <p className="text-gray-400">Skupina řidičského oprávnění</p>
+                                    <p className="text-gray-300 md:text-md text-sm">Skupina řidičského oprávnění</p>
                                         {selectedCategory === "wq8ils5ph00l87u" ?
                                             <div className={"flex flex-row items-around w-full gap-x-2"}>
                                                 <button
-                                                    className="w-full bg-blue-500 text-white font-semibold items-center text-center justify-center py-3 rounded-md" type={"button"}>
+                                                    className="w-full bg-yellow-500 text-white font-semibold items-center text-center justify-center py-2 rounded-md" type={"button"}>
                                                     A
                                                 </button>
                                                 <button
-                                                    className="w-full bg-gray-300 items-center text-center justify-center py-3 rounded-md" onClick={() => setSelectedCategory("eysdkjavl07ke2c")} type={"button"}>
+                                                    className="w-full bg-gray-300 items-center text-center justify-center py-2 rounded-md" onClick={() => setSelectedCategory("eysdkjavl07ke2c")} type={"button"}>
                                                     B
                                                 </button>
                                                 <button
-                                                    className="w-full bg-gray-300 items-center text-center justify-center py-3 rounded-md" onClick={() => setSelectedCategory("e3kh74w2vq5dap2")} type={"button"}>
+                                                    className="w-full bg-gray-300 items-center text-center justify-center py-2 rounded-md" onClick={() => setSelectedCategory("e3kh74w2vq5dap2")} type={"button"}>
                                                     C
                                                 </button>
                                             </div> :
                                             selectedCategory === "eysdkjavl07ke2c" ?
                                                 <div className={"flex flex-row items-around w-full gap-x-2"}>
                                                     <button
-                                                        className="w-full bg-gray-300 items-center text-center justify-center py-3 rounded-md" onClick={() => setSelectedCategory("wq8ils5ph00l87u")} type={"button"}>
+                                                        className="w-full bg-gray-300 items-center text-center justify-center py-2 rounded-md" onClick={() => setSelectedCategory("wq8ils5ph00l87u")} type={"button"}>
                                                         A
                                                     </button>
                                                     <button
-                                                        className="w-full bg-blue-500 text-white font-semibold items-center text-center justify-center py-3 rounded-md" type={"button"}>
+                                                        className="w-full bg-yellow-500 text-white font-semibold items-center text-center justify-center py-2 rounded-md" type={"button"}>
                                                         B
                                                     </button>
                                                     <button
-                                                        className="w-full bg-gray-300 items-center text-center justify-center py-3 rounded-md" onClick={() => setSelectedCategory("e3kh74w2vq5dap2")} type={"button"}>
+                                                        className="w-full bg-gray-300 items-center text-center justify-center py-2 rounded-md" onClick={() => setSelectedCategory("e3kh74w2vq5dap2")} type={"button"}>
                                                         C
                                                     </button>
                                                 </div> :
                                                 <div className={"flex flex-row items-around w-full gap-x-2"}>
                                                     <button
-                                                        className="w-full bg-gray-300 items-center text-center justify-center py-3 rounded-md" onClick={() => setSelectedCategory("wq8ils5ph00l87u")} type={"button"}>
+                                                        className="w-full bg-gray-300 items-center text-center justify-center py-2 rounded-md" onClick={() => setSelectedCategory("wq8ils5ph00l87u")} type={"button"}>
                                                         A
                                                     </button>
                                                     <button
-                                                        className="w-full bg-gray-300 items-center text-center justify-center py-3 rounded-md" onClick={() => setSelectedCategory("eysdkjavl07ke2c")} type={"button"}>
+                                                        className="w-full bg-gray-300 items-center text-center justify-center py-2 rounded-md" onClick={() => setSelectedCategory("eysdkjavl07ke2c")} type={"button"}>
                                                         B
                                                     </button>
                                                     <button
-                                                        className="w-full bg-blue-500 text-white font-semibold items-center text-center justify-center py-3 rounded-md" type={"button"}>
+                                                        className="w-full bg-yellow-500 text-white font-semibold items-center text-center justify-center py-2 rounded-md" type={"button"}>
                                                         C
                                                     </button>
                                                 </div>
                                         }
                                 </div>
                                 <div className="flex flex-col w-full gap-y-2">
-                                    <p className="text-gray-500 text-sm">Email</p>
+                                    <p className="text-gray-300 text-sm">Email</p>
                                     <input type="email"
+                                           name={"email"}
+                                           id={"email"}
+                                           autoComplete={"email"}
                                            className="bg-gray-200 rounded-lg w-full py-2 px-2 focus:ring-blue-600 placeholder-gray-400 placeholder border-gray-400"
                                            placeholder="jannovak@email.cz" onChange={e => setEmail(e.target.value)}/>
                                     {emailFail === "" ? <p className="hidden"></p> :
@@ -222,8 +221,10 @@ export default function Register(){
                                 </div>
                                 <div className="flex flex-col sm:flex-row">
                                     <div className="flex flex-col w-full gap-y-2">
-                                        <p className="text-gray-500  text-sm">Jméno</p>
+                                        <p className="text-gray-300 text-sm">Jméno</p>
                                         <input type="text"
+                                               name={"name"}
+                                               id={"name"}
                                                autoComplete={"name"}
                                                className="rounded-lg bg-gray-200 w-full py-2 px-2 focus:ring-blue-600 placeholder-gray-400 placeholder border-gray-400"
                                                placeholder="Jan Novák" onChange={e => setName(e.target.value)}/>
@@ -233,30 +234,25 @@ export default function Register(){
                                     </div>
                                 </div>
                                 <div className="flex flex-col w-full gap-y-2">
-                                    <p className="text-gray-500 text-sm">Heslo</p>
+                                    <p className="text-gray-300 text-sm">Heslo</p>
                                     <input type="password" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}"
+                                           name={"new-password"}
+                                           id={"new-password"}
+                                           autoComplete={"new-password"}
                                            className="rounded-lg bg-gray-200 w-full py-2 px-2 focus:ring-blue-600 placeholder-gray-400 placeholder border-gray-400"
                                            placeholder="Heslo" onChange={handleInputChangePass}/>
                                     {passwordFail === "" ? <p className="hidden"></p> :
                                         <p className="text-red-500">{passwordFail}</p>}
                                     {!isPassRegexValid && <div className="list-disc">
-                                        <p className="text-sm text-white">Heslo musí obsahovat:</p>
-                                        <ul className="px-4 list-disc text-sm text-white">
+                                        <p className="text-sm text-gray-300">Heslo musí obsahovat:</p>
+                                        <ul className="px-4 list-disc text-sm text-gray-300 decoration-gray-300 ">
                                             <li>8 znaků</li>
                                             <li>Velké písmeno</li>
                                             <li>Číslici</li>
                                         </ul>
                                     </div>}
                                 </div>
-                                <div className="flex flex-col w-full gap-y-2">
-                                    <p className="text-gray-500 text-sm">Heslo znovu</p>
-                                    <input type="password"
-                                           className="rounded-lg bg-gray-200 w-full py-2 px-2 focus:ring-blue-600 placeholder-gray-400 placeholder border-gray-400"
-                                           placeholder="Heslo znovu" onChange={e => setPasswordAgain(e.target.value)}/>
-                                    {passwordAgainFail === "" ? <p className="hidden"></p> :
-                                        <p className="text-red-500">{passwordAgainFail}</p>}
 
-                                </div>
                                 <div className="flex flex-row w-full gap-x-2 items-center">
                                     <input type={"checkbox"} id={"checkboxone"} className="rounded-md" required={true}/>
                                     <label htmlFor={"checkboxone"} className="text-sm text-gray-300">Souhlasím se
@@ -264,8 +260,8 @@ export default function Register(){
                                 </div>
                             </div>
                             <div className="pt-6">
-                                <button className="w-full py-2 text-center bg-gray-900 text-white rounded-lg"
-                                        type={"submit"}>Založit účet
+                                <button className="w-full py-2 text-center bg-green-400 text-green-700 font-semibold tracking-wide rounded-lg"
+                                        type={"submit"}>Přejít na platbu
                                 </button>
                             </div>
                         </div>

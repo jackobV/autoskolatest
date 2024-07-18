@@ -15,7 +15,7 @@ interface Date{
 export default function Page(){
     return(
         <div className="h-full min-h-screen w-full bg-gray-900">
-            <div className="flex flex-col md:flex-row h-full">
+            <div className="flex flex-col md:flex-row h-full md:items-center pt-4 md:pt-0">
                 <FeaturesAfirmCheckout />
                 <Register />
             </div>

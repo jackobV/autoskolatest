@@ -24,7 +24,20 @@ export default function Page(){
                         </a>
                     </div>
                 </div> :
-                <div>No</div>
+                <div className="flex flex-col items-center mx-auto max-w-2xl w-full py-10 bg-gray-700 rounded-md">
+                    <div className="">
+                        <Image src={logo} alt={"Logo autoskolatest.cz"} className="shrink-0"/>
+                    </div>
+                    <div className="pt-6 text-white flex flex-col items-center">
+                        <h2 className="text-3xl tracking-wide text-center font-semibold">Něco se nepovedlo!</h2>
+                        <p className="pt-6 pb-10 text-center">Platba se nepodařila, prosíme kontaktujte nás na emailu info@na-zkousku.cz</p>
+                        <a
+                            href={"https://www.autoskolatest.cz/registrace"}
+                            className="w-full py-2 text-center bg-green-400 text-green-800 font-semibold tracking-wide rounded-lg"
+                        >Přejít zpět na registraci
+                        </a>
+                    </div>
+                </div>
             }
         </div>
     )

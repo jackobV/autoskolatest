@@ -13,8 +13,8 @@ export default function DisplayQuestion({question,setTestData,testData,currentIn
                     { question.media && question.media?.length != 0 ?
                         question.media.map((item,index)=>(
                             item.isVideo ?
-                                <video controls key={index} autoPlay={true}>
-                                    <source src={"https://admin.autoskolatest.cz/api/files/00c3tkq61nyek18/"+item.id+"/"+item.media} type="video/mp4" />
+                                <video controls key={item.id} autoPlay={true} playsInline={true}>
+                                    <source src={"https://admin.autoskolatest.cz/api/files/00c3tkq61nyek18/"+item.id+"/"+item.media} id={item.id}  type="video/mp4" />
                                     {/* Add additional source tags for different video formats if necessary */}
                                 </video>
                                 :

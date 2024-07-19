@@ -25,20 +25,29 @@ export default function DisplayNavigation({currentIndex,setCurrentIndex,testData
         console.log("Test finished:", finishedTest);
     };
     return(
-        <div className="flex flex-row justify-between gap-x-2">
-            {currentIndex === 0?
-                <button disabled={true} className="bg-blue-200 text-white py-2 w-full sm:w-28 rounded-xl">Předchozí</button>
-:
-                <button onClick={()=>changeIndexFunction(0)} className="bg-blue-400 text-white py-2 w-full sm:w-28 rounded-xl  hover:bg-blue-500 duration-75">Předchozí</button>
+        <div className="flex flex-col gap-y-2">
+            <div className="flex flex-row justify-between gap-x-2">
+                {currentIndex === 0 ?
+                    <button disabled={true}
+                            className="bg-blue-200 text-white py-2 w-full sm:w-28 rounded-xl">Předchozí</button>
+                    :
+                    <button onClick={() => changeIndexFunction(0)}
+                            className="bg-blue-400 text-white py-2 w-full sm:w-28 rounded-xl  hover:bg-blue-500 duration-75">Předchozí</button>
 
-            }
-            <button className="hidden sm:inline" onClick={finishTest}>Ukončit a vyhodnotit test</button>
-            {currentIndex === 24?
-                <button disabled={true} className="bg-blue-300 text-white py-2 w-full sm:w-28 rounded-xl">Další</button>
-:
-                <button onClick={()=>changeIndexFunction(1)} className="bg-blue-500 text-white py-2 w-full sm:w-28 rounded-xl  hover:bg-blue-600 duration-75">Další</button>
-            }
+                }
+                <button className="hidden sm:inline" onClick={finishTest}>Ukončit a vyhodnotit test</button>
+                {currentIndex === 24 ?
+                    <button disabled={true}
+                            className="bg-blue-300 text-white py-2 w-full sm:w-28 rounded-xl">Další</button>
+                    :
+                    <button onClick={() => changeIndexFunction(1)}
+                            className="bg-blue-500 text-white py-2 w-full sm:w-28 rounded-xl  hover:bg-blue-600 duration-75">Další</button>
+                }
+
+            </div>
+            <button className="sm:hidden" onClick={finishTest}>Ukončit a vyhodnotit test</button>
 
         </div>
+
     )
 }

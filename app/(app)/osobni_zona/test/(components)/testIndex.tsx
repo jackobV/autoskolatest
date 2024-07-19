@@ -38,7 +38,7 @@ export default function TestIndex({length,currentIndex,setIndex,showIndexOnMobil
                     </div>
                 </div>
 
-                {showIndexOnMobile?<div className="grid grid-cols-9 gap-y-2 pt-5">
+                {showIndexOnMobile?<div className="grid grid-cols-9 gap-y-2 pt-5 pb-4">
                     {Array.from({ length: length }, (_, index) => (
                         <div key={index} className={`w-8 h-8 rounded-md flex flex-col items-center justify-center cursor-pointer ${index === currentIndex ? 'bg-blue-500 text-white' : !(testData) || testData[index].selectedAnswear != null ?'hover:bg-blue-300 duration-75 text-white bg-[#F8BC00]':"bg-white hover:bg-blue-300 duration-75  hover:text-white"}` } onClick={()=>changeIndexFunction(index)}>
                             {index + 1}

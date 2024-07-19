@@ -21,7 +21,7 @@ export default function Page() {
     const [testInProgress, setTestInProgress] = useState<boolean>(false);
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [testData, setTestData] = useState<Array<testQuestionFull> | null>(null);
-    const [showIndexOnMobile, setShowIndexOnMobile] = useState(true);
+    const [showIndexOnMobile, setShowIndexOnMobile] = useState(false);
     const [testDataFinished, setTestDataFinished] = useState<testResultData | null>(null);
     const { user } = useAuth();
 

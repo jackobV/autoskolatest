@@ -1,4 +1,5 @@
 import { CheckIcon } from '@heroicons/react/20/solid'
+import {GiftIcon} from "@heroicons/react/24/outline";
 
 const includedFeatures = [
     'Individuální příprava',
@@ -40,10 +41,21 @@ export default function PricingILPI() {
                         </ul>
                     </div>
                     <div className="-mt-2 p-2 lg:mt-0 lg:w-full lg:max-w-md lg:flex-shrink-0">
-                        <div className="rounded-2xl bg-gray-800 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
+                        <div className="pb-2">
+                            <div className="text-gray-300 text-sm flex-col flex md:flex-row md:items-center gap-x-1">
+                                <div className="flex flex-row items-center gap-x-1">
+                                    <div className="h-6 w-6 text-green-500 animate-pulse duration-700"><GiftIcon/></div>
+                                    <p className="text-green-500">CZK 500 sleva</p>
+                                </div>
+                                <p>pro prvních 1000 uživatelů (zbývá 7
+                                    licencí)</p></div>
+                        </div>
+                        <div
+                            className="rounded-2xl bg-gray-800 py-10 text-center ring-1 ring-inset ring-gray-900/5 lg:flex lg:flex-col lg:justify-center lg:py-16">
                             <div className="mx-auto max-w-xs px-8">
                                 <p className="text-base font-semibold text-gray-300">Přístup na 12 měsíců</p>
                                 <p className="mt-6 flex items-baseline justify-center gap-x-2">
+                                    <span className="line-through text-gray-400">1099</span>
                                     <span className="text-5xl font-bold tracking-tight text-gray-100">599</span>
                                     <span className="text-sm font-semibold leading-6 tracking-wide text-gray-600">CZK</span>
                                 </p>

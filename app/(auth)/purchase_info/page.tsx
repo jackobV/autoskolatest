@@ -2,7 +2,14 @@
 import { useSearchParams } from 'next/navigation'
 import Image from "next/image";
 import logo from "../../(general)/favicon.ico"
-export default function Page(){
+import {Suspense} from "react";
+
+
+
+
+
+
+function PurchaseInfo(){
     const searchParams = useSearchParams()
     const status = searchParams.get("purchaseConfirmed")
     return(
@@ -41,4 +48,12 @@ export default function Page(){
             }
         </div>
     )
+}
+
+export default function Page(){
+    return(
+        <Suspense>
+            <PurchaseInfo />
+        </Suspense>
+        )
 }

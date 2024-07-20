@@ -1,5 +1,5 @@
 "use client"
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import { Dialog, DialogPanel } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import logo from "../../../(app)/osobni_zona/(parent_components)/logoiconlg.png"
@@ -14,7 +14,14 @@ const navigation: any[] = [
 
 export default function HeroLPI() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+    useEffect(() => {
+        const urlParams = new URLSearchParams(window.location.search);
+        const gclid = urlParams.get('gclid');
+        if (gclid) {
+            // Store the GCLID in a cookie or localStorage
+            document.cookie = `gclid=${gclid}; max-age=2592000; path=/`; // 30-day expiry
+        }
+    }, []);
     return (
         <div className="bg-gray-900">
             <header className="absolute inset-x-0 top-0 z-50">

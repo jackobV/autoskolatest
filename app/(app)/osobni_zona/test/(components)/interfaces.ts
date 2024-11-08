@@ -14,7 +14,7 @@ export interface testQuestionFull{
     questionId:string,
     category:string,
     text:string,
-    media:Array<media>|null,
+    media:Array<media>|[],
     answear:Array<answear>,
     selectedAnswear:answear|null,
     correctAnswear:string
@@ -38,7 +38,7 @@ export interface testQuestionLocalStorage{
     questionId:string,
     category:string,
     text:string,
-    media:Array<media>|null,
+    media:Array<media>|[],
     answear:Array<answear>,
     correctAnswear:string
     viewed:boolean

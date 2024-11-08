@@ -46,11 +46,12 @@ export function generateMetadata({ params }: Props): Metadata {
         title: "Okruh - " + idToTitle[slugToId[params.slug]] + " - autoskolatest.cz",
     }
 }
+export const revalidate = 0
 export default async function Page({params}: { params: {slug:string} }){
 
     const idCategory:string = slugToId[params.slug]
     const titleCategory:string = idToTitle[idCategory]
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase(process.env.PBURL);
     const res = await pb.collection('category').getOne(idCategory,{"expand":"questions"})
 
     const data:Array<Question> = res.expand.questions.map((record:any) => ({

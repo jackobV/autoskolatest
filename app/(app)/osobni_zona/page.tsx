@@ -13,7 +13,7 @@ import {testQuestionLocalStorage} from "@/app/(app)/osobni_zona/test/(components
 
 export default function Page() {
     useFetchQuestions()
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase("https://pocketbase-production-5de6.up.railway.app");
     const { user, loading } = useAuth();
     const [prevResults, setPrevResults] = useState<Array<prevTestResults> | null>(null);
     const [loadingData, setLoadingData] = useState(true);

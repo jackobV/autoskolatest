@@ -1,7 +1,7 @@
 export interface media{
     id:string,
     isVideo:boolean,
-    media:string,
+    mediaUrl:string,
 }
 export interface answear{
     id:string,

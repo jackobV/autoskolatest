@@ -5,12 +5,7 @@ const faqs = [
     {
         question: "Prodlužuje se automaticky platba za licenci?",
         answer:
-            "Jednoznačně ne! Pokud stále budete po 12 měsících aplikaci potřebovat, stačí nám napsat a my Vám ji prodloužíme na další rok zdarma.",
-    },
-    {
-        question: "Proč je licence platná právě 12 měsíců?",
-        answer:
-            "Absolutní většina uživatelů aplikaci déle než 12 měsíců nepoužívá. V pozadí aplikace vyhodnucujeme obrovské množství dat a kvůli efektivitě platformy tyto data neukládáme na vždy. Pokud Vám 12 měsíců nebude stačit, napište nám a my Vám licenci prodloužíme na další rok zdarma",
+            "Licence se automaticky prodlužuje, můžete si ji kdykoliv zrušit ve správě předplatného.",
     },
     {
         question: "Funguje aplikace na mobilu?",

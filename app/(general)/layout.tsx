@@ -4,6 +4,7 @@ import logo from "../../public/logo_white.svg"
 import Image from "next/image";
 import Footer from "@/app/(general)/(components)/footer";
 import {CSPostHogProvider} from "@/app/providers";
+import Analytics from "@/app/utils/GA";
 export default function RootLayout({
   children,
 }: {
@@ -17,6 +18,7 @@ export default function RootLayout({
       <meta name="keywords" content="autoškola test, autoškola testy, testy z autoškoly, testy řidičák" />
     </head>
       <body className="min-h-screen bg-[#F4F4F4]">
+      <Analytics/>
       <main>
         <div className="bg-[#1D66B4] rounded-b-3xl">
 

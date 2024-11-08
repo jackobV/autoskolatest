@@ -1,5 +1,6 @@
 import "../globals.css"
 import {CSPostHogProvider} from "@/app/providers";
+import Analytics from "@/app/utils/GA";
 
 export const metadata = {
     title: 'autoskolatest.cz - Zajisti si úspěch u teorie z autoškoly!',
@@ -15,6 +16,7 @@ export default function RootLayout({
         <html lang="cs">
         <CSPostHogProvider>
             <body>
+            <Analytics/>
             {children}
             </body>
         </CSPostHogProvider>

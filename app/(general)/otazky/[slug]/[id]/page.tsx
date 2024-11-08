@@ -22,9 +22,11 @@ interface Question {
 interface IdToTitleMap {
     [key: string]: string;
 }
+export const revalidate = 0
 export default async function Page({params}: { params: {id:string,slug:string} }){
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase(process.env.PBURL);
     const res = await pb.collection('questions').getOne("aaaaaaa"+params.id,{"expand":"media,answers"})
+    console.log(res)
     const correctAnswers: Array<string> = res.correct
     const answers:Array<Answer> = res.expand.answers.map((item:any, index:number)=>(
         {
@@ -37,8 +39,8 @@ export default async function Page({params}: { params: {id:string,slug:string} }
     const media: Array<Media> = hasMedia
         ? res.expand.media.map((item: any) => ({
             id: item.id,
-            media: item.media,
-            isvideo: item.isvideo,
+            media: item.mediaUrl,
+            isvideo: item.isVideo,
         }))
         : []
     const idToTitle:IdToTitleMap = {
@@ -82,12 +84,12 @@ export default async function Page({params}: { params: {id:string,slug:string} }
                         media.map((item,index)=>(
                             item.isvideo ?
                                 <video controls key={index}>
-                                    <source src={"https://admin.autoskolatest.cz/api/files/00c3tkq61nyek18/"+item.id+"/"+item.media} type="video/mp4" />
+                                    <source src={"https://etesty2.mdcr.cz"+item.media} type="video/mp4" />
                                     {/* Add additional source tags for different video formats if necessary */}
                                 </video>
                                 :
                                 <div className="">
-                                    <img src={"https://admin.autoskolatest.cz/api/files/00c3tkq61nyek18/"+item.id+"/"+item.media} className=""></img>
+                                    <img src={"https://etesty2.mdcr.cz"+item.media} className=""></img>
                                 </div>
                         )):
                         <div className="bg-white w-full pt-6 px-4 text-xl font-semibold tracking-tight text-gray-800 ">

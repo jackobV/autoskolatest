@@ -1,5 +1,6 @@
 import "../../globals.css"
 import {AuthProvider} from "@/app/(app)/osobni_zona/(context)/AuthContext";
+import Analytics from "@/app/utils/GA";
 
 export const metadata = {
     title: 'Příhlásit se - autoskolatest.cz',
@@ -14,7 +15,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="cs">
-            <body>{children}</body>
+            <body>
+            <Analytics/>
+            {children}</body>
         </html>
     )
 }

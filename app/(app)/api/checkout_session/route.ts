@@ -7,7 +7,7 @@ export async function POST(req:Request,res:Response) {
     const body = await req.json()
     const stripe = require('stripe')(process.env.NEXT_PRIVATE_STRIPE_KEY);
     console.log(process.env.NEXT_PRIVATE_STRIPE_KEY);
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase(process.env.PBURL);
 
 
     try {
@@ -26,14 +26,11 @@ export async function POST(req:Request,res:Response) {
             line_items: [
                 {
                     // Provide the exact Price ID (for example, pr_1234) of the product you want to sell
-                    price: "price_1PdtlRIEUnHwRV0oruENE1tO",
+                    price: "price_1QItH1IEUnHwRV0ofO3aSfzo",
                     quantity: 1,
                 },
             ],
-            mode: 'payment',
-            discounts: [{
-                coupon: 'lfSa86W1',
-            }],
+            mode: 'subscription',
             locale:"auto",
             return_url: `${requestHeaders.get("origin")?.valueOf()}/purchase_info?purchaseConfirmed=true`,
         });

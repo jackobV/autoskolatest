@@ -9,7 +9,7 @@ interface Category {
     "id":string;
 }
 export default async function Page(){
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase(process.env.PBURL);
     const res = await pb.collection('category').getFullList()
 
     const idToTitle:IdToTitleMap = {

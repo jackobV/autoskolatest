@@ -19,7 +19,7 @@ const AuthContext = createContext<AuthContextType | undefined>(undefined);
 export const AuthProvider = ({ children }: { children: ReactNode }) => {
     const [user, setUser] = useState<User | null>(null);
     const [loading, setLoading] = useState(true);
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase("https://pocketbase-production-5de6.up.railway.app");
 
     useEffect(() => {
         if (!pb.authStore.isValid) {

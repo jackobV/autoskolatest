@@ -6,7 +6,8 @@ import {useEffect, useRef, useState} from "react";
 import PocketBase from "pocketbase";
 import {redirect} from "next/navigation";
 export default function LoginFormApp() {
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase("https://pocketbase-production-5de6.up.railway.app");
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const emailRef = useRef<HTMLInputElement | null>(null);

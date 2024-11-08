@@ -21,8 +21,8 @@ export default function FeaturesAfirmCheckout(){
                     <p className="text-gray-200 font-bold text-xl tracking-wide">
                         Zajisti si úspěch v autoškole
                     </p>
-                    <p className="text-white pt-6 pb-2 text-3xl font-bold tracking-wide"><span className="line-through text-lg pr-2 text-gray-300">1099,-</span>599 <span className="text-sm">CZK</span></p>
-                    <div className="text-gray-300 text-sm flex flex-row items-center gap-x-1"><div className="h-6 w-6 text-green-500 animate-pulse duration-700"><GiftIcon /></div><p className="text-green-500">CZK 500 sleva</p> <p>pro prvních 1000 uživatelů (zbývá 7 licencí)</p></div>
+                    <p className="text-white pt-6 pb-2 text-3xl font-bold tracking-wide"><span className="line-through text-lg pr-2 text-gray-300">199,-</span>99 <span className="text-sm">CZK / měsíc</span></p>
+                    <div className="text-gray-300 text-sm flex flex-row items-center gap-x-1"><div className="h-6 w-6 text-green-500 animate-pulse duration-700"><GiftIcon /></div><p className="text-green-500">CZK 100 sleva</p> <p>pro prvních 1000 uživatelů (zbývá 7 licencí)</p></div>
                     <ul className="flex flex-col items-start gap-y-4 pt-4">
                         {features.map((feature, i) => (
                             <li className="flex flex-row w-full gap-x-3" key={i}>

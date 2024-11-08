@@ -13,15 +13,11 @@ export default function ShowCategories() {
         if (!loading && user) {
             const questionDat = localStorage.getItem("questions");
             if (questionDat) {
-                console.log("categorizing questions");
                 const questions = JSON.parse(questionDat);
                 const categorized = categorizeQuestions(questions);
                 setCategorized(categorized);
-                console.log(categorized, "categorized");
             }
         } else {
-            console.log("User:", user);
-            console.log("Loading:", loading);
         }
     }, [user, loading]);
 

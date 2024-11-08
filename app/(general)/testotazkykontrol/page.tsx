@@ -21,7 +21,7 @@ export default function TerminyTestu(){
         "media":Media[]
 
     }
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase(process.env.PBURL);
     pb.autoCancellation(false);
     const [testInstances, setTestInstances] = useState(Array);
     const [loading, setLoading] = useState(false);

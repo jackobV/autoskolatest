@@ -8,7 +8,8 @@ interface userData{
     userCat:string
 }
 export async function POST(req: Request){
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase(process.env.PBURL);
+
     let finalQuestionSet={
         "znalostiPravidel":[],
         "zdravotnicka":[],

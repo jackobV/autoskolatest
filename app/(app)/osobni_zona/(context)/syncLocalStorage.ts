@@ -3,7 +3,6 @@
 import {testQuestionLocalStorage} from "@/app/(app)/osobni_zona/test/(components)/interfaces";
 
 export function syncLocalStorage(updatedQuestions: testQuestionLocalStorage[]) {
-    console.log(updatedQuestions)
     const existingDataJSON = localStorage.getItem('questions');
     if (existingDataJSON) {
         let existingData = JSON.parse(existingDataJSON);

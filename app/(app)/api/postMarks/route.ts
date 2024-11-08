@@ -2,7 +2,7 @@ import PocketBase from "pocketbase";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-    const pb = new PocketBase('https://admin.autoskolatest.cz');
+    const pb = new PocketBase("https://pocketbase-production-5de6.up.railway.app");
     const data = await req.json();  // Assuming this matches the expected structure
     pb.autoCancellation(false)
     // Update question_user_data for each question and collect updates to return

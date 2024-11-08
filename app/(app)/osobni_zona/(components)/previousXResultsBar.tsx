@@ -31,14 +31,12 @@ export default function PreviousXResultsBar({ previousResults, loading }: { prev
     useEffect(() => {
         if (previousResults) {
             const resultsToConsider = previousResults.slice(-30); // Get the last 30 results or less
-            console.log("Results to consider:", resultsToConsider);
 
             const populatedTrackerData:Array<tracker> = resultsToConsider.map(result => ({
                 color: result.passed ? 'emerald' : 'rose',
                 tooltip: result.passed ? 'Prospěl' : 'Neprospěl'
             }));
 
-            console.log("Populated Tracker Data before gray addition:", populatedTrackerData);
 
             if (resultsToConsider.length < 30) {
                 const missingCount = 30 - resultsToConsider.length;
@@ -50,7 +48,6 @@ export default function PreviousXResultsBar({ previousResults, loading }: { prev
                 }
             }
 
-            console.log("Populated Tracker Data after gray addition:", populatedTrackerData);
 
             setTrackerData(populatedTrackerData);
         }

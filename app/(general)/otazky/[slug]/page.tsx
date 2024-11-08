@@ -51,7 +51,7 @@ export default async function Page({params}: { params: {slug:string} }){
 
     const idCategory:string = slugToId[params.slug]
     const titleCategory:string = idToTitle[idCategory]
-    const pb = new PocketBase(process.env.PBURL);
+    const pb = new PocketBase("https://pocketbase-production-5de6.up.railway.app");
     const res = await pb.collection('category').getOne(idCategory,{"expand":"questions"})
 
     const data:Array<Question> = res.expand.questions.map((record:any) => ({

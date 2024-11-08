@@ -49,7 +49,7 @@ export default async function QuestionLayout({children,params}: { children: Reac
     const id_without_leading = params.id.substring(7)
 
     const idCategory:string = slugToId[params.slug]
-    const pb = new PocketBase(process.env.PBURL);
+    const pb = new PocketBase("https://pocketbase-production-5de6.up.railway.app");
     const res = await pb.collection('category').getOne(idCategory)
     const data:Array<string> = res.questions
     const placeInArray = data.indexOf("aaaaaaa"+params.id)

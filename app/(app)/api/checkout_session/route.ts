@@ -32,7 +32,7 @@ export async function POST(req:Request,res:Response) {
             ],
             mode: 'subscription',
             locale:"auto",
-            return_url: `${requestHeaders.get("origin")?.valueOf()}/purchase_info?purchaseConfirmed=true`,
+            return_url: `https://www.autoskolatest.cz/purchase_info?purchaseConfirmed=true`,
         });
         console.log(session)
         return new Response(JSON.stringify({clientSecret: session.client_secret}));

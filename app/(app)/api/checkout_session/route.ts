@@ -7,7 +7,7 @@ export async function POST(req:Request,res:Response) {
     const body = await req.json()
     const stripe = require('stripe')(process.env.NEXT_PRIVATE_STRIPE_KEY);
     console.log(process.env.NEXT_PRIVATE_STRIPE_KEY);
-    const pb = new PocketBase(process.env.PBURL);
+    const pb = new PocketBase("https://pocketbase-production-5de6.up.railway.app");
 
 
     try {

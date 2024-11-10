@@ -3,7 +3,7 @@ import {testQuestionFull, testResultData} from "@/app/(app)/osobni_zona/test/(co
 import {syncLocalStorage} from "@/app/(app)/osobni_zona/(context)/syncLocalStorage";
 
 async function postMarks({testData}:{testData:testResultData}) {
-    const response = await axios.post("http://localhost:3000/api/postMarks", testData);
+    const response = await axios.post("/api/postMarks", testData);
     console.log("API Response:", response.data);
     return response.data;  // Assuming the API returns the updated questions
 }

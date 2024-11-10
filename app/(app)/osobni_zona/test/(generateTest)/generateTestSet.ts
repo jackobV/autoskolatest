@@ -1,6 +1,4 @@
-import { CategorizedQuestions, testQuestionFull } from "@/app/(app)/osobni_zona/test/(components)/interfaces";
-import { useAuth } from "@/app/(app)/osobni_zona/(context)/AuthContext";
-import { categorizeQuestions } from "@/app/(app)/osobni_zona/(context)/categorizeQuestions";
+import {CategorizedQuestions, testQuestionFull} from "@/app/(app)/osobni_zona/test/(components)/interfaces";
 import CategoryMixTestGen from "@/app/(app)/osobni_zona/test/(generateTest)/CategoryMixTestGen";
 
 export function GenerateTestSet({ category, categorized }: { category: string, categorized: CategorizedQuestions }): Array<testQuestionFull> {
@@ -21,7 +19,7 @@ export function GenerateTestSet({ category, categorized }: { category: string, c
     const combined = [...pojmy, ...jizda, ...ostatni, ...specific, ...znacky, ...situace, ...podminky, ...predpisy, ...zdravotnicka];
     console.log(combined)
     // Ensure there are exactly 25 questions
-    const questionsCombinedTestVersion: Array<testQuestionFull> = combined.slice(0, 25).map((item, index) => {
+    return combined.slice(0, 25).map((item, index) => {
         let points: number;
         if (index < 14) {
             points = 2;
@@ -49,6 +47,4 @@ export function GenerateTestSet({ category, categorized }: { category: string, c
             points: points,
         };
     });
-
-    return questionsCombinedTestVersion;
 }

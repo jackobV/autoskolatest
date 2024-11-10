@@ -14,6 +14,7 @@ import {
 } from '@heroicons/react/24/outline'
 import logo from "./logoiconlg.png"
 import Image from "next/image";
+import {SettingsIcon} from "lucide-react";
 
 
 function classNames(...classes: string[]) {
@@ -25,6 +26,8 @@ export default function Shell({ children }: { children: React.ReactNode }) {
     const [navigation,setNavigation] = useState([
         { name: 'Osobní zóna', href: '/osobni_zona', icon: HomeIcon, current: false },
         { name: 'Test', href: '/osobni_zona/test', icon: PencilSquareIcon, current: false },
+        { name: 'Nastavení', href: '/osobni_zona/nastaveni', icon: SettingsIcon, current: false },
+
     ])
     const pathname = usePathname()
 

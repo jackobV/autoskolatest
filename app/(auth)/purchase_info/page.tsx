@@ -3,6 +3,7 @@ import { useSearchParams } from 'next/navigation'
 import Image from "next/image";
 import logo from "../../(general)/favicon.ico"
 import {Suspense} from "react";
+import {analyticsEvents, PurchaseEventParams} from "@/app/utils/analytics";
 
 
 
@@ -12,6 +13,24 @@ import {Suspense} from "react";
 function PurchaseInfo(){
     const searchParams = useSearchParams()
     const status = searchParams.get("purchaseConfirmed")
+    const purchase:PurchaseEventParams = {
+        currency:"CZK",
+        value:100,
+        transaction_id:"",
+        items:[
+            {
+                item_id:"subscription",
+                item_name:"subscription",
+                price:100,
+                currency:"CZK",
+                quantity:1
+            }
+        ]
+    }
+    if(status === "true"){
+        analyticsEvents.purchase(purchase);
+    }
+
     return(
         <div className="bg-gray-900 w-full h-full min-h-screen pt-10">
             {status === "true"?

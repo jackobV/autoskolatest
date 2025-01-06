@@ -30,9 +30,8 @@ export const QuestionsProvider = ({ children }: { children: ReactNode }) => {
             setError(null);
 
             const categories = [
-                'oqw98ds03hofyhb', 'sf10my3uhqik14q', 'm447h3rqjy9vmve',
-                'we10dfuu22j50qk', 'lfw9b1mdl1a7ao9', 'zawcp7ctmohtfts',
-                'am7fli1w8fckmmm', 'l4t3asvmg8tc873', user.category
+                'tkonhkd9c2tjvch', 'oqw98ds03hofyhb', 'zawcp7ctmohtfts',
+                'l4t3asvmg8tc873', 'lfw9b1mdl1a7ao9', 'we10dfuu22j50qk', user.category
             ].filter(Boolean);
 
             const allQuestions = {};
@@ -62,7 +61,9 @@ export const QuestionsProvider = ({ children }: { children: ReactNode }) => {
                         media: question.expand?.media ? question.expand.media.map(m => ({
                             id: m.id,
                             isVideo: m.isvideo || false,
-                            media: m.media
+                            mediaUrl: m.mediaUrl,
+                            formatCode:m.formatCode
+
                         })) : [],
                         // @ts-ignore
                         answear: question.expand?.answers?.map(a => ({

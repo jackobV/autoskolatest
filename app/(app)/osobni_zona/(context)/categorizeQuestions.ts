@@ -6,16 +6,14 @@ import {
 } from "@/app/(app)/osobni_zona/test/(components)/interfaces";
 const CATEGORY_INFO: { [key: string]: CategoryInfo } = {
     'oqw98ds03hofyhb': { name: 'Zdravotnická', points: 1 },
-    'sf10my3uhqik14q': { name: 'Ostatní ustanovení', points: 2 },
-    'm447h3rqjy9vmve': { name: 'Jízda vozidla', points: 2 },
     'we10dfuu22j50qk': { name: 'Dopravní situace', points: 4 },
     'lfw9b1mdl1a7ao9': { name: 'Dopravní značky', points: 1 },
     'zawcp7ctmohtfts': { name: 'Podmínky provozu vozidla', points: 1 },
-    'am7fli1w8fckmmm': { name: 'Pojmy a povinnosti', points: 2 },
     'l4t3asvmg8tc873': { name: 'Související předpisy', points: 2 },
     'e3kh74w2vq5dap2': { name: 'Zásady bezpečné jízdy CD', points: 2 },
     'eysdkjavl07ke2c': { name: 'Zásady bezpečné jízdy B', points: 2 },
     'wq8ils5ph00l87u': { name: 'Zásady bezpečné jízdy A', points: 2 },
+    "tkonhkd9c2tjvch":{name:"Pravidla provozu na pozemních komunikacích",points:2}
 
     // Add other categories as needed
 };

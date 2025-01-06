@@ -2,6 +2,7 @@ export interface media{
     id:string,
     isVideo:boolean,
     mediaUrl:string,
+    formatCode:string;
 }
 export interface answear{
     id:string,

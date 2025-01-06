@@ -21,10 +21,7 @@ export default async function Page(){
         "oqw98ds03hofyhb":"Zdravotnická příprava",
         "l4t3asvmg8tc873":"Související předpisy",
         "zawcp7ctmohtfts":"Podmínky provozu vozidla",
-        "am7fli1w8fckmmm": "Pojmy a povinnosti",
-        "sf10my3uhqik14q":"Ostatní ustanovení",
-        "m447h3rqjy9vmve":"Jízda vozidla",
-        "1xlri5vx466bfqt":"Znalost předpisů souvisejících s provozem",
+        "tkonhkd9c2tjvch":"Pravidla provozu na pozemních komunikacích"
     }
     const idToSlug:IdToTitleMap = {
         "lfw9b1mdl1a7ao9":"dopravni_znacky",

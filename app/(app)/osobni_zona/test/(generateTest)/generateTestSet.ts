@@ -4,19 +4,16 @@ import CategoryMixTestGen from "@/app/(app)/osobni_zona/test/(generateTest)/Cate
 export function GenerateTestSet({ category, categorized }: { category: string, categorized: CategorizedQuestions }): Array<testQuestionFull> {
     const userCat = category;
     const existingQuestions = new Set<string>();
-    const pojmy = CategoryMixTestGen(categorized.am7fli1w8fckmmm.viewed, categorized.am7fli1w8fckmmm.notViewed, 3, existingQuestions);
-    console.log(pojmy);
-    const jizda = CategoryMixTestGen(categorized.m447h3rqjy9vmve.viewed, categorized.m447h3rqjy9vmve.notViewed, 4, existingQuestions);
-    console.log(jizda);
-    const ostatni = CategoryMixTestGen(categorized.sf10my3uhqik14q.viewed, categorized.sf10my3uhqik14q.notViewed, 3, existingQuestions);
+    const pravidla = CategoryMixTestGen(categorized.tkonhkd9c2tjvch.viewed,categorized.tkonhkd9c2tjvch.notViewed,10,existingQuestions);
     const specific = CategoryMixTestGen(categorized[userCat]["viewed"], categorized[userCat]["notViewed"], 4, existingQuestions);
+    console.log(specific)
     const znacky = CategoryMixTestGen(categorized.lfw9b1mdl1a7ao9.viewed, categorized.lfw9b1mdl1a7ao9.notViewed, 3, existingQuestions);
     const situace = CategoryMixTestGen(categorized.we10dfuu22j50qk.viewed, categorized.we10dfuu22j50qk.notViewed, 3, existingQuestions);
     const podminky = CategoryMixTestGen(categorized.zawcp7ctmohtfts.viewed, categorized.zawcp7ctmohtfts.notViewed, 2, existingQuestions);
     const predpisy = CategoryMixTestGen(categorized.l4t3asvmg8tc873.viewed, categorized.l4t3asvmg8tc873.notViewed, 2, existingQuestions);
     const zdravotnicka = CategoryMixTestGen(categorized.oqw98ds03hofyhb.viewed, categorized.oqw98ds03hofyhb.notViewed, 1, existingQuestions);
 
-    const combined = [...pojmy, ...jizda, ...ostatni, ...specific, ...znacky, ...situace, ...podminky, ...predpisy, ...zdravotnicka];
+    const combined = [...pravidla, ...specific, ...znacky, ...situace, ...podminky, ...predpisy, ...zdravotnicka];
     console.log(combined)
     // Ensure there are exactly 25 questions
     return combined.slice(0, 25).map((item, index) => {

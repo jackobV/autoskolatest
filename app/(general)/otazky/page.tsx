@@ -32,10 +32,8 @@ export default async function Page(){
         "oqw98ds03hofyhb":"zdravotnicka_priprava",
         "l4t3asvmg8tc873":"souvisejici_predpisy",
         "zawcp7ctmohtfts":"podminky_provozu_vozidla",
-        "am7fli1w8fckmmm": "pojmy_povinnosti",
-        "sf10my3uhqik14q":"ostatni_ustanoveni",
-        "m447h3rqjy9vmve":"jizda_vozidla",
-        "1xlri5vx466bfqt":"znalost_predpisu_souvisejici_s_provozem",
+        "tkonhkd9c2tjvch":"pravidla-provozu-na-pozemnich-komunikacich"
+
     }
     const listOfCategories:Array<Category> = res.map((item,index)=>(
         {
@@ -44,7 +42,7 @@ export default async function Page(){
             "numberOfQuestions":item["questions"].length,
         }
     ))
-    console.log(listOfCategories)
+    console.log(res)
     return(
         <div className="max-w-5xl mx-auto px-4">
             <nav className="md:text-lg pb-5 pt-5 tracking-tight subpixel-antialiased"><h1 className="inline text-gray-400">Otázky autoškola teorie</h1><h1 className="inline text-gray-400 px-4">/</h1><h1 className="inline">okruhy</h1></nav>

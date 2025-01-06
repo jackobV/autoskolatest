@@ -5,6 +5,7 @@ interface Media {
     "id": string;
     "media":string;
     "isvideo":Boolean;
+    formatCode:string
 }
 interface Answer {
     "id":string;
@@ -26,7 +27,6 @@ export const revalidate = 0
 export default async function Page({params}: { params: {id:string,slug:string} }){
     const pb = new PocketBase("https://pocketbase-production-5de6.up.railway.app");
     const res = await pb.collection('questions').getOne("aaaaaaa"+params.id,{"expand":"media,answers"})
-    console.log(res)
     const correctAnswers: Array<string> = res.correct
     const answers:Array<Answer> = res.expand.answers.map((item:any, index:number)=>(
         {
@@ -41,6 +41,7 @@ export default async function Page({params}: { params: {id:string,slug:string} }
             id: item.id,
             media: item.mediaUrl,
             isvideo: item.isVideo,
+            formatCode:item.formatCode
         }))
         : []
     const idToTitle:IdToTitleMap = {
@@ -82,14 +83,14 @@ export default async function Page({params}: { params: {id:string,slug:string} }
                 <div className="bg-white rounded-t-lg border aspect-[16/8] flex flex-row gap-x-5 items-center justify-center overflow-clip ">
                     { hasMedia ?
                         media.map((item,index)=>(
-                            item.isvideo ?
+                            item.formatCode === "video_mp4" ?
                                 <video controls key={index}>
-                                    <source src={"https://etesty2.mdcr.cz"+item.media} type="video/mp4" />
+                                    <source src={item.media} type="video/mp4" />
                                     {/* Add additional source tags for different video formats if necessary */}
                                 </video>
                                 :
                                 <div className="">
-                                    <img src={"https://etesty2.mdcr.cz"+item.media} className=""></img>
+                                    <img src={item.media} className=""></img>
                                 </div>
                         )):
                         <div className="bg-white w-full pt-6 px-4 text-xl font-semibold tracking-tight text-gray-800 ">
